@@ -48,6 +48,7 @@ h1, h2, h3 { line-height: 1.25; }
 .logo { font-weight: 800; font-size: 1.15rem; text-decoration: none; color: var(--metin); white-space: nowrap; }
 .logo-simge { font-size: 1.4rem; }
 .ust-menu nav { display: flex; gap: 0.25rem; flex: 1; overflow-x: auto; }
+.ust-menu nav a:first-child { margin-left: auto; }
 .ust-menu nav a { text-decoration: none; color: var(--soluk); padding: 0.4rem 0.75rem; border-radius: 8px; font-weight: 600; white-space: nowrap; font-size: 0.95rem; }
 .ust-menu nav a:hover { background: var(--zemin); color: var(--metin); }
 .ust-menu nav a.aktif { background: var(--mavi-acik); color: var(--mavi-koyu); }
