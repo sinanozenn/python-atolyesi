@@ -21,7 +21,7 @@ const nextConfig = {
             },
             {
               // Python motoru dosyaları büyük ve sürümü sabit: tarayıcı önbelleğinde uzun süre tutulsun
-              source: "/pyodide/:path*",
+              source: "/motor/:path*",
               headers: [{ key: "Cache-Control", value: "public, max-age=604800" }],
             },
           ];

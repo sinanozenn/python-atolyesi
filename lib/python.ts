@@ -25,7 +25,7 @@ function durumuAyarla(d: MotorDurumu) {
 
 function baslat() {
   durumuAyarla("yukleniyor");
-  const w = new Worker(`${TEMEL_YOL}/pyodide/worker.mjs`, { type: "module" });
+  const w = new Worker(`${TEMEL_YOL}/motor/worker.mjs`, { type: "module" });
   worker = w;
   hazir = new Promise<void>((coz, reddet) => {
     const dinle = (e: MessageEvent) => {

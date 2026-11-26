@@ -1,8 +1,5 @@
 node_modules
 .next
 out
-public/pyodide/*
-!public/pyodide/worker.mjs
-!public/pyodide/runner-core.mjs
 next-env.d.ts
 *.tsbuildinfo

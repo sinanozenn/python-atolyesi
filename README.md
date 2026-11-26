@@ -18,7 +18,7 @@ Lise hazırlık sınıfları için Türkçe, etkileşimli Python dersleri. Pytho
 Node.js 18.18 veya üstü gerekir.
 
 ```bash
-npm install      # Pyodide dosyaları otomatik olarak public/pyodide klasörüne kopyalanır
+npm install
 npm run dev      # http://localhost:3000
 ```
 
@@ -53,6 +53,7 @@ app/                  sayfalar (ana sayfa, dersler, IDE, öğretmen rehberi)
 components/           editör, çıktı paneli, alıştırma, soru vb.
 content/              ders içerikleri  ← en çok burayı düzenleyeceksiniz
 lib/                  Python çalıştırıcı, kontrolcü, Türkçe hata mesajları, ilerleme kaydı
-public/pyodide/       Python motoru (worker.mjs + runner-core.mjs; diğer dosyalar npm install ile gelir)
+python-motoru/        Python çalıştırıcı (worker.mjs + runner-core.mjs)
+app/motor/            Python motoru dosyalarını doğru dosya türüyle sunan yol (Pyodide, npm paketinden)
 tests/                çözümleri doğrulayan test betiği
 ```

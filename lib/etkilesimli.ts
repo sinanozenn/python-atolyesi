@@ -47,7 +47,7 @@ export class EtkilesimliMotor {
     if (this.worker) return;
     this.motorHazir = false;
     this.olaylar.durum("yukleniyor");
-    const w = new Worker(`${TEMEL_YOL}/pyodide/worker.mjs`, { type: "module" });
+    const w = new Worker(`${TEMEL_YOL}/motor/worker.mjs`, { type: "module" });
     this.worker = w;
     this.hazir = new Promise<void>((coz, reddet) => {
       w.addEventListener("message", (e) => this.mesaj(e, coz, reddet));

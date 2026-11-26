@@ -2,7 +2,7 @@
 // Çalıştırmak için: npx tsx tests/cozumleri-dogrula.mts
 import { loadPyodide } from "pyodide";
 // @ts-ignore
-import { hazirla } from "../public/pyodide/runner-core.mjs";
+import { hazirla } from "../python-motoru/runner-core.mjs";
 import { dersler, alistirmalar } from "../content";
 import { ciktiyiDuzenle } from "../lib/kontrol";
 import path from "node:path";
