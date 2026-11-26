@@ -1,4 +1,4 @@
-// Tüm derslerin listesi: önce iki hazırlık dersi (algoritma, akış şeması), sonra ders kitabı 3. Ünite sırası.
+// Tüm derslerin listesi: önce iki hazırlık dersi (algoritma, akış şeması), sonra Python dersleri.
 // Yeni bir ders eklemek için:
 // 1) content/dersler/ klasörüne yeni bir dosya oluşturun (mevcut bir dersi kopyalayıp başlayabilirsiniz)
 // 2) Aşağıya import edip SIRA listesinde istediğiniz yere ekleyin. Ders numaraları bu sıraya göre otomatik verilir.
@@ -41,3 +41,14 @@ export function kitapKunye(d: Ders): { bolum: string; sayfa: string; etiket: str
   return { bolum, sayfa, etiket };
 }
 
+
+/** Her derse sırayla verilen renk (kartlar ve ders sayfası rozeti). */
+const RENKLER = ["#0f766e", "#e8930c", "#14a394", "#f0607a", "#0e95d6", "#6fae12"];
+export function dersRengi(d: Ders): string {
+  return RENKLER[(d.sira - 1) % RENKLER.length];
+}
+
+/** Hazırlık dersleri (algoritma, akış şeması) mı? */
+export function hazirlikMi(d: Ders): boolean {
+  return d.kitap.startsWith("Hazırlık");
+}

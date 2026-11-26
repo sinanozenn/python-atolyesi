@@ -18,7 +18,7 @@ export default function DersIcerigi({ ders }: { ders: Ders }) {
             return (
               <div key={i} className="ornek">
                 {b.aciklama && <p className="ornek-aciklama">{b.aciklama}</p>}
-                <KodCalistirici kod={b.kod} girdiler={b.girdiler} baslik={b.baslik ? `Örnek: ${b.baslik}` : "Örnek"} />
+                <KodCalistirici kod={b.kod} girdiler={b.girdiler} baslik={b.baslik ? (b.baslik.startsWith("Örnek") ? b.baslik : `Örnek: ${b.baslik}`) : "Örnek"} />
               </div>
             );
           case "ipucu":

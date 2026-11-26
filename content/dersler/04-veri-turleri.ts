@@ -15,9 +15,6 @@ const ders: Ders = {
     "input() ile kullanıcıdan veri alıp int() ile sayıya dönüştürebilmek",
   ],
   ogretmenNotu: `
-- Kitaptaki **3 elma + 3 armut** benzetmesini kullanın: farklı türler doğrudan toplanamaz.
-- \`"10" * 5\` → \`1010101010\` örneği (kitap s. 92) öğrencilerin çok ilgisini çeker; önce tahmin ettirin.
-- \`input()\` kitapta 3.3 bölümünde (9. Örnek) ve s. 94'teki Bilgi Notu'nda geçiyor. Sitede, sonraki derslerde kullanılabilmesi için burada öğretiliyor.
 - Sitede \`input()\` cevapları kodu çalıştırmadan önce **Girdiler** kutusuna yazılır. Bunu öğrencilere mutlaka gösterin.
 `,
   bloklar: [
@@ -38,7 +35,7 @@ Birçok programlama dilinde değişken tanımlarken türü yazmak gerekir: \`int
     },
     {
       tur: "ornek",
-      baslik: "Kitap 5. Örnek: Sayısal ve metinsel veri",
+      baslik: "Örnek: Sayısal ve metinsel veri",
       kod: `a = 5
 b = 10
 c = a * b
@@ -74,7 +71,7 @@ print("Yaşım " + yas)`,
       icerik: `
 ## Aynı veri, farklı tür
 
-Aynı **10** verisi farklı türlerle farklı amaçlara hizmet eder (Kitap s. 92):
+Aynı **10** verisi farklı türlerle farklı amaçlara hizmet eder:
 
 - \`a = 10\` → **sayı**. \`a * a\` işlemi **100** verir.
 - \`b = "10"\` → **metin**. \`b * 5\` işlemi metni 5 kez yan yana yazar: **1010101010**

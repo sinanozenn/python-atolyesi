@@ -17,9 +17,6 @@ const ders: Ders = {
   ],
   ogretmenNotu: `
 - **1. saat:** aritmetiksel operatörler + işlem önceliği. **2. saat:** karşılaştırma + mantıksal operatörler.
-- Kitaptaki **Bilgi Notu**nu vurgulayın: çarpmada \`x\` kullanılmaz çünkü \`x\` bir değişken adı olabilir.
-- ⚠️ **Kitapla ilgili not:** Kitap üs alma için “\`**\` veya \`^\`” der. **Python'da üs alma yalnızca \`**\`** ile yapılır; \`^\` Python'da *Özel Veya (XOR)* işlemidir (\`10^5\` → 15). Öğrencilere bunu açıkça söyleyin.
-- Kitaptaki 3. Örnekte \`print(a==10 ^ b>20)\` yazımı Python'da beklenen sonucu vermez (\`^\` karşılaştırmalardan önce işlenir). Sitede **parantezli** yazım kullanıldı: \`(a==10) ^ (b>20)\`.
 - Mod alma (\`%\`) için ilkokuldaki bölme işlemini hatırlatın: 10 ÷ 3 = 3, **kalan 1**.
 `,
   bloklar: [
@@ -46,7 +43,7 @@ Operatörler; değişkenlere değer atamada, matematiksel ve mantıksal işlemle
       icerik: `
 ## Aritmetiksel operatörler
 
-Temel matematik işlemlerini yapmayı sağlar (Kitap, Tablo 3.1):
+Temel matematik işlemlerini yapmayı sağlar:
 
 | Operatör | Tanımı | Örnek | Sonuç |
 |---|---|---|---|
@@ -85,7 +82,7 @@ Temel matematik işlemlerini yapmayı sağlar (Kitap, Tablo 3.1):
     },
     {
       tur: "ornek",
-      baslik: "Kitap 1. Örnek: a = 10 ve b = 5 ile işlemler",
+      baslik: "Örnek: a = 10 ve b = 5 ile işlemler",
       kod: `a = 10
 b = 5
 print(a + b)
@@ -95,7 +92,7 @@ print(b / a)
 print(a ** b)
 print(a % 2)
 print(b % 3)`,
-      aciklama: "Kitapta satır sonlarında noktalı virgül (;) var. Python'da noktalı virgül gerekmez; yazsan da hata vermez.",
+      aciklama: "Bazı dillerde satır sonlarına noktalı virgül (;) konur. Python'da noktalı virgül gerekmez; yazsan da hata vermez.",
     },
     {
       tur: "soru",
@@ -181,7 +178,7 @@ print(a % 5)`,
       icerik: `
 ## Karşılaştırma operatörleri
 
-İki değeri karşılaştırır. Sorunun cevabı doğruysa **True** [*tru*, doğru], yanlışsa **False** [*fols*, yanlış] sonucunu verir. Bu iki değere **boolean** [*buulyın*, mantıksal] veri tipi denir (Kitap, Tablo 3.2).
+İki değeri karşılaştırır. Sorunun cevabı doğruysa **True** [*tru*, doğru], yanlışsa **False** [*fols*, yanlış] sonucunu verir. Bu iki değere **boolean** [*buulyın*, mantıksal] veri tipi denir.
 
 | Operatör | Tanımı | Örnek | Anlamı |
 |---|---|---|---|
@@ -197,7 +194,7 @@ print(a % 5)`,
     },
     {
       tur: "ornek",
-      baslik: "Kitap 2. Örnek: a = 4 ve b = 8",
+      baslik: "Örnek: a = 4 ve b = 8",
       kod: `a = 4
 b = 8
 print(a == b)
@@ -227,7 +224,7 @@ print(a <= b)`,
       icerik: `
 ## Mantıksal operatörler
 
-İki veya daha fazla koşulu birlikte değerlendirir ve sonuç olarak yine **True / False** üretir (Kitap, Tablo 3.3). Kitapta diğer dillerdeki işaretler de verilmiştir; Python'da kelimeler kullanılır:
+İki veya daha fazla koşulu birlikte değerlendirir ve sonuç olarak yine **True / False** üretir. Bazı dillerde işaretler kullanılır; Python'da kelimeler kullanılır:
 
 | Python'da | Diğer dillerde | Tanımı | Ne zaman True? |
 |---|---|---|---|
@@ -239,7 +236,7 @@ print(a <= b)`,
     },
     {
       tur: "ornek",
-      baslik: "Kitap 3. Örnek: a = 10 ve b = 20",
+      baslik: "Örnek: a = 10 ve b = 20",
       kod: `a = 10
 b = 20
 print(a < 15 and b == 20)

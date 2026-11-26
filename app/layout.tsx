@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import "@fontsource/ibm-plex-sans/400.css";
-import "@fontsource/ibm-plex-sans/400-italic.css";
-import "@fontsource/ibm-plex-sans/500.css";
-import "@fontsource/ibm-plex-sans/600.css";
+import "@fontsource/nunito/400.css";
+import "@fontsource/nunito/400-italic.css";
+import "@fontsource/nunito/600.css";
+import "@fontsource/nunito/700.css";
+import "@fontsource/nunito/800.css";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
 import "./globals.css";
@@ -10,7 +11,7 @@ import UstMenu from "@/components/UstMenu";
 
 export const metadata: Metadata = {
   title: { default: "Python Atölyesi", template: "%s – Python Atölyesi" },
-  description: "Programlamaya Giriş ve Algoritma dersi 3. ünite: tarayıcıda çalışan, Türkçe, etkileşimli Python dersleri.",
+  description: "Algoritma, akış şeması ve Python: tarayıcıda çalışan, Türkçe, etkileşimli programlama dersleri.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

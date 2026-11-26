@@ -313,6 +313,7 @@ export default function Ide() {
             height="100%"
             basicSetup={{ foldGutter: false, highlightActiveLine: true, autocompletion: true, tabSize: 4 }}
             indentWithTab
+            onCreateEditor={(v) => { document.fonts?.ready.then(() => v.requestMeasure()); }}
           />
         </div>
 

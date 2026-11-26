@@ -16,11 +16,9 @@ const ders: Ders = {
     "if-else ile karar veren programlar yazabilmek",
   ],
   ogretmenNotu: `
-- Kitaptaki **günlük hayat** örnekleriyle başlayın: hava yağmurluysa şemsiye al, değilse…
-- **Görsel 3.6 (karar ağacı)**: Program normalde bir ağacın gövdesi gibi düz ilerler; karar yapısıyla **dallanır**.
-- **Akış diyagramını** (Görsel 3.8) sitede gösterin, sonra 14. Örneğin kodunu diyagramla eşleştirin.
+- **Karar ağacı**: Program normalde bir ağacın gövdesi gibi düz ilerler; karar yapısıyla **dallanır**.
+- **Akış diyagramını** sitede gösterin, sonra basketbolcu örneğinin kodunu diyagramla eşleştirin.
 - Python girintiye duyarlıdır: hatalı girintili bir kodu bilerek çalıştırıp hata mesajını gösterin.
-- Kitaptaki **3. Uygulama** (staj başvurusu) ve ünite sonu **6. soru** (3'e bölünebilme) sitede alıştırma olarak var.
 `,
   bloklar: [
     {
@@ -40,13 +38,13 @@ Normalde bir program satır satır, sırayla ilerler; tıpkı bir **ağacın gö
 - **else** [*els*, değilse] → Şart **yanlışsa (False)** bu bloktaki işlemler yapılır.
 `,
     },
-    { tur: "gorsel", svg: ifElseAkis, altyazi: "If-else yapısının akış diyagramı (Kitap, Görsel 3.8)" },
+    { tur: "gorsel", svg: ifElseAkis, altyazi: "If-else yapısının akış diyagramı" },
     {
       tur: "metin",
       icerik: `
 ### Python'da yazılışı
 
-Birçok dilde bloklar **yay ayraçlarla** \`{ }\` gösterilir. **Python girintiye duyarlı** bir dildir: bloklar **girinti** (satır başındaki 4 boşluk) ile gösterilir (Kitap, Tablo 3.6).
+Birçok dilde bloklar **yay ayraçlarla** \`{ }\` gösterilir. **Python girintiye duyarlı** bir dildir: bloklar **girinti** (satır başındaki 4 boşluk) ile gösterilir.
 
 **Diğer dillerin çoğunda:**
 \`\`\`
@@ -74,7 +72,7 @@ Dikkat etmen gereken **iki kural**:
     },
     {
       tur: "ornek",
-      baslik: "Kitap 14. Örnek: Basketbolcunun performansı",
+      baslik: "Örnek: Basketbolcunun performansı",
       aciklama: "İki zaman diliminde atılan basket sayılarının ortalaması 60 veya üzerindeyse performans çok iyi; değilse çalışmak gerekiyor. Girdileri değiştirip iki durumu da dene!",
       kod: `basket_1 = int(input("Birinci sürede attığınız basket sayısını giriniz: "))
 basket_2 = int(input("İkinci sürede attığınız basket sayısını giriniz: "))
@@ -96,7 +94,7 @@ else:
     },
     {
       tur: "ornek",
-      baslik: "Kitap 15. Örnek: Sayı tahmin oyunu",
+      baslik: "Örnek: Sayı tahmin oyunu",
       kod: `tahmin_edilecek_sayi = 11
 kullanici_tahmin = int(input("Aklımdan tuttuğum sayıyı tahmin et! "))
 
@@ -169,7 +167,7 @@ else:
       tur: "alistirma",
       alistirma: {
         id: "k7-staj",
-        baslik: "Kitap 3. Uygulama: Staj başvurusu",
+        baslik: "Uygulama: Staj başvurusu",
         gorev: `Bir şirket stajyer öğrencileri ön görüşmeye çağıracak. Şartlar: öğrencinin **en az bir programlama dili bilmesi** ve **İngilizce bilmesi**.
 
 Programın sırasıyla şu iki soruyu sorsun (cevaplar **E** ya da **H**):
@@ -207,7 +205,7 @@ else:
       tur: "alistirma",
       alistirma: {
         id: "k7-bolunebilir",
-        baslik: "Ünite sonu 6. soru: 3'e bölünebilir mi?",
+        baslik: "3'e bölünebilir mi?",
         gorev: `Kullanıcıdan bir sayı alan program, sayı 3'e bölünebiliyorsa \`Sayı 3'e bölünebilir\`, bölünemiyorsa \`Sayı 3'e bölünemez!\` yazmalı.
 
 Aşağıdaki kodda **boşluklar (...)** ve **bir hata** var. Boşlukları doldur ve hatayı düzelt.`,

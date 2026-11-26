@@ -20,9 +20,7 @@ const ders: Ders = {
   ],
   ogretmenNotu: `
 - Önce döngüsüz yazdırın: “Programlama” kelimesini 5 kez yazmak için 5 satır \`print\`. Sonra 100 kez yazmak gerekse? Döngünün sağladığı **kod sadeliğini** vurgulayın.
-- \`range(5)\` sayılarını tahtaya yazın: 0, 1, 2, 3, 4. Kitaptaki kenar notu: “Ayraçlar içinde belirtilen sayı döngüye dâhil edilmez.”
-- **İz sürme tablosu**: 18. Örnek için tahtaya \`sayi\` ve \`sonuc\` sütunları çizip adım adım doldurun.
-- Ünite sonu **8. soru** sitede alıştırma olarak var. Kitaptaki kodda hem boşluklar hem de \`%2!=0\` hatası bulunuyor.
+- **İz sürme tablosu**: toplam örneği için tahtaya \`sayi\` ve \`sonuc\` sütunları çizip adım adım doldurun.
 `,
   bloklar: [
     {
@@ -58,10 +56,10 @@ Bu satır şunu söyler: “**i** değişkeni sırayla 0, 1, 2, 3, 4 değerlerin
 - \`for\` satırı **iki nokta** \`:\` ile biter, tekrarlanacak satırlar **girintili** yazılır (tıpkı if gibi).
 `,
     },
-    { tur: "gorsel", svg: donguAkis, altyazi: "Döngü yapısının akış diyagramı (Kitap, Görsel 3.10)" },
+    { tur: "gorsel", svg: donguAkis, altyazi: "Döngü yapısının akış diyagramı" },
     {
       tur: "ornek",
-      baslik: "Kitap 17. Örnek: 5 kez “Programlama”",
+      baslik: "Örnek: 5 kez “Programlama”",
       kod: `for i in range(5):
     print("Programlama")`,
     },
@@ -78,7 +76,7 @@ print("Döngü bitti.")`,
       icerik: `
 ## range() ile aralık belirlemek
 
-\`range(başlangıç, bitiş, artış)\` şeklinde üç değer alabilir (Kitap, Tablo 3.8):
+\`range(başlangıç, bitiş, artış)\` şeklinde üç değer alabilir:
 
 | Yazım | Ürettiği sayılar | Açıklama |
 |---|---|---|
@@ -132,7 +130,7 @@ Döngülerin en yaygın kullanımlarından biri toplam **biriktirmektir**:
     },
     {
       tur: "ornek",
-      baslik: "Kitap 18. Örnek: 0'dan 10'a kadar sayıların toplamı",
+      baslik: "Örnek: 0'dan 10'a kadar sayıların toplamı",
       kod: `sonuc = 0
 for sayi in range(11):
     sonuc = sonuc + sayi
@@ -196,7 +194,7 @@ for i in range(1, 11):
       tur: "alistirma",
       alistirma: {
         id: "k9-cift-toplam",
-        baslik: "Ünite sonu 8. soru: Çift sayıların toplamı",
+        baslik: "Çift sayıların toplamı",
         gorev: `Kullanıcıdan bir **sınır sayısı** alan program, 0'dan başlayarak o sayıya kadar (sınır **dâhil**) olan **çift** sayıların toplamını yazmalı. Sınır 10 ise 0+2+4+6+8+10:
 
 \`\`\`

@@ -15,10 +15,8 @@ const ders: Ders = {
     "Değişken isimlendirme kurallarını uygulayabilmek",
   ],
   ogretmenNotu: `
-- **Kitap 4. Örnek**'teki kutucuk çizimini tahtada yapın: \`sayi_1\`, \`sayi_2\`, \`toplam\` kutuları; önce boş, sonra dolu.
-- **1. Uygulama** (ortalama) sitede alıştırma olarak var. Öğrencilerden önce defterlerine kutucukları çizmelerini, sonra kodu yazmalarını isteyin.
-- ⚠️ **Kitapla ilgili not:** Kitap değişken adlarının “\`_\` ve \`$\` ile başlayabileceğini” söyler. Bu bazı diller için geçerlidir; **Python'da \`$\` kullanılamaz**, yalnızca harf, rakam ve \`_\` kullanılır.
-- Ünite sonundaki **3. ölçme sorusu** (yanlış değişken tanımlarını düzeltme) bu derste alıştırma olarak yer alıyor.
+- Değişkeni **etiketli bir kutuya** benzetin; tahtaya \`sayi_1\`, \`sayi_2\`, \`toplam\` kutularını önce boş, sonra dolu çizin.
+- Python'da değişken adları harf veya \`_\` ile başlar; \`$\` kullanılamaz. Hatalı adlarla bilerek kod çalıştırıp hata mesajını gösterin.
 `,
   bloklar: [
     {
@@ -48,7 +46,7 @@ no = 100
     {
       tur: "metin",
       icerik: `
-## Kitap 4. Örnek: Adım adım değişkenler
+## Örnek: Adım adım değişkenler
 
 **1. Değişkenler tanımlanır:** \`sayi_1\`, \`sayi_2\`, \`toplam\`
 
@@ -65,7 +63,7 @@ no = 100
     },
     {
       tur: "ornek",
-      baslik: "Kitap 4. Örnek",
+      baslik: "Örnek: Adım adım değişkenler",
       kod: `sayi_1 = 10
 sayi_2 = 20
 toplam = sayi_1 + sayi_2
@@ -123,7 +121,7 @@ print(x)`,
       tur: "alistirma",
       alistirma: {
         id: "k3-ortalama",
-        baslik: "Kitap 1. Uygulama: Ortalama",
+        baslik: "Uygulama: Ortalama",
         gorev: `1. İki sayıyı değişken olarak tanımla: \`sayi_1\` ve \`sayi_2\`
 2. Bu değişkenlere **40** ve **60** değerlerini ata.
 3. İki sayının ortalamasını bulup \`ortalama\` adlı değişkene ata.
@@ -188,7 +186,7 @@ Ayrıca:
       alistirma: {
         id: "k3-isimler",
         baslik: "Yanlış değişken isimlerini düzelt",
-        gorev: `Ünite sonu 3. sorudaki gibi, bu koddaki **değişken isimleri kurallara uymuyor**. Değişken isimlerini düzelterek programı çalışır hale getir. (Değerlere dokunma.)
+        gorev: `Bu koddaki **değişken isimleri kurallara uymuyor**. Değişken isimlerini düzelterek programı çalışır hale getir. (Değerlere dokunma.)
 
 Çıktı şöyle olmalı:
 \`\`\`
@@ -221,7 +219,7 @@ print(sayi)`,
       tur: "ipucu",
       renk: "uyari",
       baslik: "Neden print = 50 yazılmaz?",
-      icerik: "Ünite sonu 3. sorudaki `print=50` tanımı Python'da hemen hata vermez ama `print` komutunu **bozar**. Bundan sonra `print(...)` yazdığında program çalışmaz, çünkü `print` artık bir komut değil, içinde 50 olan bir kutudur. Komut isimlerini değişken adı olarak kullanma!",
+      icerik: "`print=50` tanımı Python'da hemen hata vermez ama `print` komutunu **bozar**. Bundan sonra `print(...)` yazdığında program çalışmaz, çünkü `print` artık bir komut değil, içinde 50 olan bir kutudur. Komut isimlerini değişken adı olarak kullanma!",
     },
     {
       tur: "ipucu",

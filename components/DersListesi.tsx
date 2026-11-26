@@ -1,41 +1,31 @@
 import Link from "next/link";
-import { dersler, kitapKunye } from "@/content";
+import type { CSSProperties } from "react";
+import { dersler, dersRengi, hazirlikMi } from "@/content";
 
 export default function DersListesi() {
   const gruplar = [
-    { ad: "Hazırlık: problem çözme", liste: dersler.filter((d) => d.kitap.startsWith("Hazırlık")) },
-    { ad: "3. Ünite: Python ile programlama", liste: dersler.filter((d) => !d.kitap.startsWith("Hazırlık")) },
+    { ad: "Hazırlık: problem çözme", liste: dersler.filter(hazirlikMi) },
+    { ad: "Python ile programlama", liste: dersler.filter((d) => !hazirlikMi(d)) },
   ];
   return (
     <>
       {gruplar.map((g) => (
-        <div key={g.ad}>
+        <section key={g.ad} className="ders-grubu">
           <h3 className="liste-ara">{g.ad}</h3>
-          <Satirlar liste={g.liste} />
-        </div>
+          <ol className="ders-kartlari">
+            {g.liste.map((d) => (
+              <li key={d.slug}>
+                <Link href={`/dersler/${d.slug}`} className="ders-karti" style={{ "--r": dersRengi(d) } as CSSProperties}>
+                  <span className="ders-karti-no">{d.sira}</span>
+                  <span className="ders-karti-baslik">{d.baslik}</span>
+                  <span className="ders-karti-ozet">{d.ozet}</span>
+                  <span className="ders-karti-sure">{d.sure.replace("dk", "dakika")}</span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </section>
       ))}
     </>
-  );
-}
-
-function Satirlar({ liste }: { liste: typeof dersler }) {
-  return (
-    <ol className="ders-listesi">
-      {liste.map((d) => {
-        const { etiket } = kitapKunye(d);
-        return (
-          <li key={d.slug}>
-            <Link href={`/dersler/${d.slug}`} className="ders-satir">
-              <span className="ders-satir-no">{String(d.sira).padStart(2, "0")}</span>
-              <span className="ders-satir-govde">
-                <span className="ders-satir-baslik">{d.baslik}</span>
-                <span className="ders-satir-ozet">{d.ozet}</span>
-              </span>
-              <span className="ders-satir-kitap">{etiket}</span>
-            </Link>
-          </li>
-        );
-      })}
-    </ol>
   );
 }

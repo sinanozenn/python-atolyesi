@@ -3,8 +3,8 @@ import type { Ders } from "../tipler";
 const ders: Ders = {
   slug: "unite-degerlendirme",
   sira: 12,
-  baslik: "Ünite Değerlendirme",
-  ozet: "Ünitede öğrendiklerini ölçme ve değerlendirme sorularıyla test et.",
+  baslik: "Genel Değerlendirme",
+  ozet: "Bütün derslerde öğrendiklerini sorularla ve son bir görevle test et.",
   simge: "🏆",
   sure: "40 dk",
   kitap: "3. Ünite Ölçme ve Değerlendirme Soruları · s. 118–121",
@@ -14,16 +14,8 @@ const ders: Ders = {
     "Öğrendiklerini yeni bir problemde kullanabilmek",
   ],
   ogretmenNotu: `
-- Kitaptaki 10 sorunun yerleri:
-  - **1, 2, 4, 5** → bu sayfada
-  - **3** → 5. ders (Değişkenler)
-  - **6** → 9. ders (if-else)
-  - **7** → 10. ders (elif)
-  - **8** → 11. ders (for)
-  - **9** → 12. ders (while)
-  - **10** → 13. ders (döngü ve karar)
-- ⚠️ **2. soruyla ilgili not:** Kitaptaki \`a=5,b=10\` yazımı Python'da **hata verir** (SyntaxError). Sitede doğru yazım \`a = 5\` ve \`b = 10\` olarak iki satırda verildi; doğru cevap değişmez: **Ayşe 55.0**.
-- Bu sayfadaki ek sorular ünitenin tamamını kapsar. Ders sonunda bir **mini sınav** olarak kullanılabilir.
+- Bu sayfadaki sorular bütün Python derslerini kapsar. Ders sonunda bir **mini sınav** olarak kullanılabilir.
+- Yanlış cevaplanan sorularda öğrencileri ilgili derse geri yönlendirin.
 `,
   bloklar: [
     {
@@ -31,11 +23,9 @@ const ders: Ders = {
       icerik: `
 ## Haydi kendini dene! 🎯
 
-Bu sayfada ders kitabındaki **3. Ünite Ölçme ve Değerlendirme Soruları** ile ünitenin tamamını kapsayan ek sorular var. Önce düşün, sonra cevapla. Yanlış yaparsan sorun değil; açıklamayı oku ve ilgili derse geri dön.
+Bu sayfada bütün Python derslerini kapsayan sorular var. Önce düşün, sonra cevapla. Yanlış yaparsan sorun değil; açıklamayı oku ve ilgili derse geri dön.
 
-> Kitaptaki 3, 6, 7, 8, 9 ve 10. sorular ilgili derslerde **alıştırma** olarak yer alıyor. Onları da tamamladıysan ünitenin tüm sorularını çözmüşsün demektir!
-
-## Kitaptaki sorular
+## Değerlendirme soruları
 `,
     },
     {
@@ -93,7 +83,7 @@ print( ... )`,
     {
       tur: "metin",
       icerik: `
-## Ek sorular: Ünitenin tamamı
+## Ek sorular
 `,
     },
     {
@@ -182,7 +172,7 @@ while i < 5:
       alistirma: {
         id: "k12-final",
         baslik: "Final görevi: Sınıf not ortalaması",
-        gorev: `Ünitede öğrendiğin her şeyi kullanacağın son görev! 🎓
+        gorev: `Derslerde öğrendiğin her şeyi kullanacağın son görev! 🎓
 
 Kullanıcıdan önce **öğrenci sayısını**, sonra her öğrencinin **notunu** al. Notları bir **diziye** ekle. Sonra şunları yazdır:
 
@@ -234,7 +224,7 @@ else:
       tur: "ipucu",
       renk: "basari",
       baslik: "Tebrikler! 🎉",
-      icerik: `Bu üniteyi tamamladıysan artık şunları biliyorsun:
+      icerik: `Bu dersleri tamamladıysan artık şunları biliyorsun:
 
 - Python ile ekrana yazdırma, kullanıcıdan veri alma
 - Aritmetiksel, karşılaştırma ve mantıksal **operatörler**

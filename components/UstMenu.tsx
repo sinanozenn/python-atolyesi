@@ -14,7 +14,7 @@ export default function UstMenu() {
     <header className="ust-menu">
       <div className="kap ust-menu-ic">
         <Link href="/" className="logo">
-          Python Atölyesi
+          Python <span>Atölyesi</span>
         </Link>
         <nav>
           {baglantilar.map((b) => (

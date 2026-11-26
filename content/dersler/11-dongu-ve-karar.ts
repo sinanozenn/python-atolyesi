@@ -15,9 +15,8 @@ const ders: Ders = {
     "Döngü kullanmanın kodu nasıl sadeleştirdiğini açıklayabilmek",
   ],
   ogretmenNotu: `
-- Kitap bu bölümde öğrencilerden **algoritma tasarlamalarını ve akış diyagramı çizmelerini** istiyor. Her alıştırmadan önce öğrencilere 5 dakika verip algoritmayı defterlerine yazdırın, sonra koda geçin.
-- **5. Uygulama** (5 ile bölünebilen sayılar), **2. Etkinlik** (10 sayıyı tek/çift listelere ayırma) ve ünite sonu **10. soru** (tek/çift toplamları) sitede alıştırma olarak var.
-- 2. Etkinlik'in “döngüsüz” versiyonunu öğrencilere yazdırıp satır sayısını karşılaştırın; kitaptaki değerlendirme soruları bunun için.
+- Her alıştırmadan önce öğrencilere 5 dakika verip **algoritmasını yazdırın veya akış şemasını çizdirin**; sonra koda geçin.
+- Aynı problemin döngüsüz çözümünü yazdırıp satır sayısını karşılaştırın.
 `,
   bloklar: [
     {
@@ -70,7 +69,7 @@ Bir problemi çözmeden önce adımlarını sırayla yazmaya **algoritma** denir
       tur: "alistirma",
       alistirma: {
         id: "k11-bes",
-        baslik: "Kitap 5. Uygulama: 5 ile bölünebilen sayılar",
+        baslik: "Uygulama: 5 ile bölünebilen sayılar",
         gorev: `Bir yazılım firması iş başvurusu için şu programı istiyor:
 
 - **0 ile 20** arasındaki (0 ve 20 dâhil) sayılardan **5 ile bölünebilenleri** alt alta yazdır,
@@ -138,7 +137,7 @@ print(liste)`,
       tur: "alistirma",
       alistirma: {
         id: "k11-etkinlik",
-        baslik: "Kitap 2. Etkinlik: Tek ve çift listeler",
+        baslik: "Etkinlik: Tek ve çift listeler",
         gorev: `1. Kullanıcıdan **10 sayı** al ve bunları \`liste\` adlı diziye ekle.
 2. Bu sayılardan çift olanları \`cift\`, tek olanları \`tek\` adlı dizilere ekle.
 3. Üç diziyi şöyle yazdır:
@@ -213,7 +212,7 @@ sayi2 = int(input())
       tur: "alistirma",
       alistirma: {
         id: "k11-tek-cift-toplam",
-        baslik: "Ünite sonu 10. soru: Tek ve çift toplamları",
+        baslik: "Tek ve çift toplamları",
         gorev: `Kullanıcıdan **10 sayı** al. Girilen sayılardan **tek** olanların ve **çift** olanların toplamını ayrı ayrı bulup şöyle yazdır:
 
 \`\`\`
@@ -233,7 +232,7 @@ cift_toplam = 0
           { desen: "\\b(for|while)\\b", mesaj: "Bu soruda döngü kullanmalısın." },
           { desen: "\\bif\\b", mesaj: "Bu soruda karar yapısı (if) kullanmalısın." },
         ],
-        ipuclari: ["2. Etkinlikteki programa çok benziyor; bu kez listeye eklemek yerine toplama ekle.", "`tek_toplam = tek_toplam + sayi`"],
+        ipuclari: ["Tek ve çift listeler etkinliğindeki programa çok benziyor; bu kez listeye eklemek yerine toplama ekle.", "`tek_toplam = tek_toplam + sayi`"],
         cozum: `tek_toplam = 0
 cift_toplam = 0
 for i in range(10):

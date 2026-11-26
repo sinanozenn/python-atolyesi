@@ -16,10 +16,8 @@ const ders: Ders = {
     "Sonsuz döngüyü tanıyıp önleyebilmek; break ve continue kullanabilmek",
   ],
   ogretmenNotu: `
-- **Tablo 3.10**'u (aynı problemin for ve while ile çözümü) iki sütun hâlinde tahtaya yazın; farkları öğrencilere buldurun.
+- Aynı problemin for ve while ile çözümünü iki sütun hâlinde tahtaya yazın; farkları öğrencilere buldurun.
 - Sonsuz döngüyü bilerek gösterin (\`i = i + 1\` satırını silin). Site 5 saniye sonra programı durdurur.
-- \`break\` ve \`continue\` kitapta s. 107'deki Bilgi Notu'nda geçiyor.
-- Ünite sonu **9. soru** (while ile çift sayıların toplamı) bu derste. Sayı tahmin oyunu, 9. dersteki (if-else) 15. Örneği döngüyle geliştirir.
 `,
   bloklar: [
     {
@@ -31,17 +29,17 @@ const ders: Ders = {
 
 Genellikle döngünün **kaç kez** döneceğinin belli olmadığı durumlarda kullanılır. Örneğin “kullanıcı doğru şifreyi girene kadar sor”.
 
-**Python'da yazılışı (Kitap, Tablo 3.9):**
+**Python'da yazılışı:**
 \`\`\`python
 while şart:
     işlem
 \`\`\`
 `,
     },
-    { tur: "gorsel", svg: donguAkis, altyazi: "While döngü yapısının akış diyagramı (Kitap, Görsel 3.11)" },
+    { tur: "gorsel", svg: donguAkis, altyazi: "While döngü yapısının akış diyagramı" },
     {
       tur: "ornek",
-      baslik: "Kitap 19. Örnek: 5 kez “programlama”",
+      baslik: "Örnek: 5 kez “programlama”",
       kod: `isim = "programlama"
 i = 0
 while i < 5:
@@ -59,7 +57,7 @@ while i < 5:
     },
     {
       tur: "ornek",
-      baslik: "Kitap 20. Örnek: 0'dan 10'a kadar toplam",
+      baslik: "Örnek: 0'dan 10'a kadar toplam",
       kod: `i = 0
 toplam = 0
 while i < 11:
@@ -80,7 +78,7 @@ Döngüdeki işlemlerin kaç kez tekrar edeceği **sayaç** denilen bir değişk
 
 Her turda işlem yapılır, sonra sayaç kontrol edilir. Şart sağlandığı sürece döngü devam eder.
 
-### Aynı problem, iki döngü (Kitap, Tablo 3.10)
+### Aynı problem, iki döngü
 
 0'dan 5'e kadar (5 dâhil) sayıları yazdıran iki program. Çıktıları aynıdır:
 
@@ -144,7 +142,7 @@ print("Giriş başarılı! ✅")`,
       icerik: `
 ## break ve continue
 
-Kitaptaki Bilgi Notu'na göre bu iki deyim **döngünün akışını kontrol eder**:
+Bu iki deyim **döngünün akışını kontrol eder**:
 
 - **break** [*breyk*, kesme] → Döngüyü **hemen sonlandırır**.
 - **continue** [*kontinyu*, devam et] → O turun geri kalanını **atlar**, döngü bir sonraki turdan devam eder.
@@ -180,7 +178,7 @@ Kitaptaki Bilgi Notu'na göre bu iki deyim **döngünün akışını kontrol ede
       tur: "alistirma",
       alistirma: {
         id: "k10-cift-toplam",
-        baslik: "Ünite sonu 9. soru: while ile çift toplam",
+        baslik: "while ile çift toplam",
         gorev: `0'dan başlayarak kullanıcının girdiği **sınır sayısına** kadar (sınır dâhil) olan **çift** sayıların toplamını bulan programı bu kez **while döngüsü** ile yaz. Sınır 10 ise:
 
 \`\`\`
@@ -243,7 +241,7 @@ print("Kalkış!")`,
       alistirma: {
         id: "k10-tahmin",
         baslik: "Sayı tahmin oyunu (geliştirilmiş)",
-        gorev: `if-else dersindeki tahmin oyununu (Kitap 15. Örnek) geliştirelim. Gizli sayı **11**. Kullanıcı doğru bulana kadar tahmin istemeye devam et:
+        gorev: `if-else dersindeki tahmin oyununu geliştirelim. Gizli sayı **11**. Kullanıcı doğru bulana kadar tahmin istemeye devam et:
 
 - Tahmin gizli sayıdan büyükse \`Daha küçük\`
 - Küçükse \`Daha büyük\`

@@ -15,9 +15,7 @@ const ders: Ders = {
     "bool(), ord() ve chr() fonksiyonlarını tanımak",
   ],
   ogretmenNotu: `
-- **Tablo 3.4** genel programlama dilleri içindir (byte, short, long, double, char…). Python'da bunların hepsine karşılık **4 temel tür** kullanılır: \`int\`, \`float\`, \`str\`, \`bool\`. Öğrencilerin kafası karışmaması için bunu vurgulayın.
-- Kitaptaki **7, 8, 9, 10, 11 ve 12. Örnekler** sitede çalıştırılabilir hâlde. **2. Uygulama** (silindir) alıştırma olarak var.
-- Kitaptaki 9. ve 10. örneklerdeki \`,+(...)\` yazımı sadeleştirildi: \`print("...", sayi / 10)\`.
+- Veri türleri tablosu genel programlama dilleri içindir (byte, short, long, double, char…). Python'da bunların hepsine karşılık **4 temel tür** kullanılır: \`int\`, \`float\`, \`str\`, \`bool\`. Öğrencilerin kafası karışmaması için bunu vurgulayın.
 - Python'da \`char\` türü yoktur; karakterin ASCII karşılığı \`ord()\`, sayının karakter karşılığı \`chr()\` ile bulunur.
 `,
   bloklar: [
@@ -37,7 +35,7 @@ Bilgisayar **ikilik sayı sistemiyle** çalışır: bilginin varlığı **1**, y
 
 Her veri türü hafızada farklı miktarda yer kaplar. Basit işler için küçük boyutlu türler seçmek programın daha az yer kaplamasını ve daha hızlı çalışmasını sağlar.
 
-## Veri türleri tablosu (Kitap, Tablo 3.4)
+## Veri türleri tablosu
 
 | Sayısal: Tam sayılar | Sayısal: Ondalıklı | Metinsel | Mantıksal |
 |---|---|---|---|
@@ -67,7 +65,7 @@ Python'da bu türlerin hepsi için **dört temel tür** kullanılır ve türü y
     },
     {
       tur: "ornek",
-      baslik: "Kitap 6. Örnek: Üç veri türü bir arada",
+      baslik: "Örnek: Üç veri türü bir arada",
       kod: `sayi_1 = 20
 sayi_2 = 30
 toplam = sayi_1 + sayi_2
@@ -89,7 +87,7 @@ Python'da ondalıklı sayılar için ayrı tanımlama yapılmaz; veri ya da işl
     },
     {
       tur: "ornek",
-      baslik: "Kitap 7. Örnek: Dairenin alanı",
+      baslik: "Örnek: Dairenin alanı",
       kod: `pi = 3.14
 r = 10
 alan = pi * r * r
@@ -105,7 +103,7 @@ print(alan)`,
     },
     {
       tur: "ornek",
-      baslik: "Kitap 8. Örnek: Okul duvarını boyama",
+      baslik: "Örnek: Okul duvarını boyama",
       aciklama: "Okul duvarının uzun kenarı 5 m, kısa kenarı 2 m. Duvar 20 öğrenciye eşit paylaştırılıyor. Bir öğrencinin boyayacağı alan ne kadar?",
       kod: `uzun_kenar = 5
 kisa_kenar = 2
@@ -117,7 +115,7 @@ print("Her öğrencinin boyama alanı:", ort, "m²")`,
       tur: "alistirma",
       alistirma: {
         id: "k5-silindir",
-        baslik: "Kitap 2. Uygulama: Silindirin hacmi",
+        baslik: "Uygulama: Silindirin hacmi",
         gorev: `Matematik ve bilişim teknolojileri öğretmenleri bir problem hazırladı. Silindirin hacmi **taban alanı × yükseklik** ile bulunur. Taban bir dairedir: **pi × r × r**.
 
 - pi = **3**
@@ -144,7 +142,7 @@ print("Silindirin hacmi:", hacim)`,
     },
     {
       tur: "ornek",
-      baslik: "Kitap 9. Örnek: 10 günlük soru ortalaması",
+      baslik: "Örnek: 10 günlük soru ortalaması",
       aciklama: "Üniversite sınavına hazırlanan bir öğrenci 10 günde çözdüğü soruların günlük ortalamasını buluyor. Girdiler kutusundaki sayıları değiştirip tekrar çalıştır.",
       kod: `turkce_sayi = int(input("Türkçe soru sayısını girin: "))
 mat_sayi = int(input("Matematik soru sayısını girin: "))
@@ -163,7 +161,7 @@ print("Sosyal Bilimler ortalama soru sayınız:", sos_sayi / 10)`,
     },
     {
       tur: "ornek",
-      baslik: "Kitap 10. Örnek: Harçlık planı",
+      baslik: "Örnek: Harçlık planı",
       aciklama: "Haftalık harçlık 700 TL. Öğrenci %5'ini biriktirip %5'ini yardımlaşmaya ayırıyor, kalanı 7 güne eşit bölüyor.",
       kod: `harclik = 700
 birikim = (harclik * 5) / 100
@@ -179,7 +177,7 @@ print("Harcayabileceği günlük para:", gunlukpara)`,
       alistirma: {
         id: "k5-daire",
         baslik: "Dairenin alanı (kullanıcıdan)",
-        gorev: `Kitap 7. Örneği geliştirelim: Yarıçapı **kullanıcıdan** al (tam sayı olarak), pi = **3.14** olsun ve dairenin alanını şöyle yazdır (yarıçap 10 ise):
+        gorev: `Dairenin alanı örneğini geliştirelim: Yarıçapı **kullanıcıdan** al (tam sayı olarak), pi = **3.14** olsun ve dairenin alanını şöyle yazdır (yarıçap 10 ise):
 
 \`\`\`
 Alan: 314.0
@@ -216,7 +214,7 @@ Günlük harcama: 90.0
           { girdiler: ["350"], beklenen: "Birikim: 35.0\nGünlük harcama: 45.0" },
         ],
         ipuclari: [
-          "Kitap 10. Örnekteki gibi yüzde hesabı: `birikim = (harclik * 10) / 100`",
+          "Harçlık planı örneğindeki gibi yüzde hesabı: `birikim = (harclik * 10) / 100`",
           "Kalan para: `harclik - birikim`. Bunu 7'ye böl.",
         ],
         cozum: `harclik = int(input("Haftalık harçlığın: "))
@@ -236,7 +234,7 @@ print("Günlük harcama:", gunluk)`,
     },
     {
       tur: "ornek",
-      baslik: "Kitap 11. Örnek: Metin olarak sayı",
+      baslik: "Örnek: Metin olarak sayı",
       kod: `ders_ad = "Programlamaya Giriş ve Algoritmalar"
 no = "1"
 toplam = no + no
@@ -264,7 +262,7 @@ print(toplam)`,
     },
     {
       tur: "ornek",
-      baslik: "Kitap 12. Örnek: bool()",
+      baslik: "Örnek: bool()",
       kod: `deg_1 = "Merhaba"   # içinde metin var → True
 deg_2 = 20          # içinde sayı var → True
 deg_3 = ""          # boş metin → False

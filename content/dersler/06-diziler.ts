@@ -16,9 +16,6 @@ const ders: Ders = {
   ],
   ogretmenNotu: `
 - Diziyi **numaralı dolaplara** benzetin: tek bir dolap sırası (dizi adı), her dolabın bir numarası (indis) var ve numaralar **0'dan** başlıyor.
-- Kitaptaki **Tablo 3.5** (sayi[0]…sayi[3]) tahtaya çizilebilir.
-- Kitapta diğer dillerdeki tanımlar (\`int sayi[]={...}\`) da var; Python'da \`sayi = [10, 20, 30, 40]\` yeterli.
-- \`append()\` ve \`len()\` kitapta adıyla geçmez ama ünite sonu 5. soru ve 2. Etkinlik (10 sayıyı listeye ekleme) için gereklidir.
 `,
   bloklar: [
     {
@@ -36,7 +33,7 @@ sayi = [10, 20, 30, 40]
 
 ## İndis: Elemanın sıra numarası
 
-Dizideki her elemanın bir sıra numarası vardır. Bu numaraya **indis** denir. **İndisler 0'dan başlar!** (Kitap, Tablo 3.5)
+Dizideki her elemanın bir sıra numarası vardır. Bu numaraya **indis** denir. **İndisler 0'dan başlar!**
 
 | İndis | \`sayi[0]\` | \`sayi[1]\` | \`sayi[2]\` | \`sayi[3]\` |
 |---|---|---|---|---|
@@ -65,7 +62,7 @@ print("Eleman sayısı:", len(sayi))`,
     },
     {
       tur: "ornek",
-      baslik: "Kitap 13. Örnek: Farklı türlerde diziler",
+      baslik: "Örnek: Farklı türlerde diziler",
       aciklama: "Diziler her veri türüyle kullanılabilir. Hepsinin ikinci elemanını (indis 1) yazdıralım.",
       kod: `dizi_i = [10, 20, 30, 40]
 dizi_s = ["Programlamaya", "Giriş", "ve", "Algoritmalar"]
@@ -109,7 +106,7 @@ print("Not sayısı:", len(notlar))`,
     },
     {
       tur: "soru",
-      soru: "Ünite sonu 5. soru: Aşağıdaki kodun çıktısının `['programlamaya', 'giriş', 've', 'algoritmalar']` olması için `print( ... )` içine ne yazılmalı?",
+      soru: "Aşağıdaki kodun çıktısının `['programlamaya', 'giriş', 've', 'algoritmalar']` olması için `print( ... )` içine ne yazılmalı?",
       kod: `ders = ["programlamaya", "giriş", "ve", "algoritmalar"]
 programlama_dili = [ders, "python"]
 print( ... )`,

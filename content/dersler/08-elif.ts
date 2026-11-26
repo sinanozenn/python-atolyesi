@@ -16,11 +16,8 @@ const ders: Ders = {
     "İç içe karar yapılarıyla program tasarlayabilmek",
   ],
   ogretmenNotu: `
-- Python'da “else if” yerine kısaltması **elif** kullanılır (Kitap, Tablo 3.7).
 - **Sıra önemli** sorusunu sınıfta tartışın: Python *ilk doğru* şartı çalıştırır, gerisine bakmaz.
-- **4. Uygulama (zam)**: “1 ve 5 dâhil” gibi sınır ifadelerini \`<=\` ile nasıl yazacaklarını konuşun.
-- **1. Etkinlik (üniversite başvurusu)** 40 dakikalık bir etkinlik. Sitede “Mini proje” olarak var; kitaptaki değerlendirme sorularını (karar yapılarını kullanırken nelere dikkat ettiniz?) sonunda sorun.
-- Ünite sonu **7. soru** (hesap makinesi) da bu derste.
+- **Maaş zammı uygulaması**: “1 ve 5 dâhil” gibi sınır ifadelerini \`<=\` ile nasıl yazacaklarını konuşun.
 `,
   bloklar: [
     {
@@ -39,11 +36,11 @@ Bunun için **else if** yapısı kullanılır. Python'da bunun kısaltması olan
 İstediğin kadar \`elif\` ekleyebilirsin. Buna **çoklu seçim yapısı** denir.
 `,
     },
-    { tur: "gorsel", svg: elifAkis, altyazi: "Else if yapısının akış diyagramı (Kitap, Görsel 3.9)" },
+    { tur: "gorsel", svg: elifAkis, altyazi: "Else if yapısının akış diyagramı" },
     {
       tur: "metin",
       icerik: `
-**Python'da yazılışı (Kitap, Tablo 3.7):**
+**Python'da yazılışı:**
 \`\`\`python
 if sorgu1:
     1. İşlem
@@ -64,7 +61,7 @@ else:
     },
     {
       tur: "ornek",
-      baslik: "Kitap 16. Örnek: Pozitif, negatif ya da sıfır",
+      baslik: "Örnek: Pozitif, negatif ya da sıfır",
       kod: `sayi = int(input("Bir Sayı Giriniz: "))
 if sayi > 0:
     print("Pozitif Sayıdır.")
@@ -123,7 +120,7 @@ elif puan >= 85:
       tur: "alistirma",
       alistirma: {
         id: "k8-hesap",
-        baslik: "Ünite sonu 7. soru: Hesap makinesi",
+        baslik: "Hesap makinesi",
         gorev: `Kullanıcıdan iki sayı ve bir işlem (\`-\` ya da \`+\`) alan program, işleme göre çıkarma ya da toplama sonucunu yazmalı. Başka bir sembol girilirse \`Tanımlı işlem giriniz!\` yazmalı.
 
 Kodda **boşluklar (...)** var. Doldur ve çalıştır. Örnek: 8, 3 ve \`-\` girilirse çıktı \`5\` olmalı.`,
@@ -161,7 +158,7 @@ else:
       tur: "alistirma",
       alistirma: {
         id: "k8-zam",
-        baslik: "Kitap 4. Uygulama: Maaş zammı",
+        baslik: "Uygulama: Maaş zammı",
         gorev: `Bir işveren, personeline çalıştıkları süreye göre zam yapacak:
 
 | Çalışma süresi | Zam oranı |
@@ -238,7 +235,7 @@ else:
       tur: "alistirma",
       alistirma: {
         id: "k8-universite",
-        baslik: "Mini proje (Kitap 1. Etkinlik): Üniversite başvurusu",
+        baslik: "Mini proje: Üniversite başvurusu",
         gorev: `Bir öğrenci özel yetenek sınavı yapan bir üniversiteye başvuruyor.
 
 **Başvuru şartları** (üçü birden sağlanmalı):

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { dersler, dersBul, kitapKunye } from "@/content";
+import { dersler, dersBul, dersRengi, hazirlikMi } from "@/content";
+import type { CSSProperties } from "react";
 import DersIcerigi from "@/components/DersIcerigi";
 import Markdown from "@/components/Markdown";
 import MotorRozeti from "@/components/MotorRozeti";
@@ -31,10 +32,13 @@ export default async function DersSayfasi({ params }: { params: Promise<{ slug: 
       </div>
 
       <header className="ders-baslik">
-        <p className="ders-sira">Ders {ders.sira}</p>
+        <p className="ders-sira" style={{ "--r": dersRengi(ders) } as CSSProperties}>
+          <span>{ders.sira}</span>
+          {hazirlikMi(ders) ? "Hazırlık dersi" : "Python dersi"}
+        </p>
         <h1>{ders.baslik}</h1>
         <p className="ders-kunye">
-          {kitapKunye(ders).etiket}. Süre {ders.sure.replace("dk", "dakika")}.
+          Süre: {ders.sure.replace("dk", "dakika")}
         </p>
       </header>
 
@@ -72,7 +76,7 @@ export default async function DersSayfasi({ params }: { params: Promise<{ slug: 
           </Link>
         ) : (
           <Link href="/ide" className="gezinme-bag gezinme-sonraki">
-            <span className="gezinme-yon">Ünite bitti</span>
+            <span className="gezinme-yon">Dersler bitti</span>
             <span>IDE'de serbest çalış</span>
           </Link>
         )}

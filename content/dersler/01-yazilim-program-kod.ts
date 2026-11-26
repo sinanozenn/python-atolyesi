@@ -16,8 +16,7 @@ const ders: Ders = {
     "Hata mesajlarından korkmamak 🙂",
   ],
   ogretmenNotu: `
-- Kitaptaki **“Başlarken”** sorularıyla açın: *Programlar nasıl yazılıyor? Sık kullandığınız yazılımlar neler?* Öğrencilerin cevaplarını tahtaya yazın (oyunlar, sosyal medya, okul sistemi…).
-- **Görsel 3.1 (Yazılım → Program → Kod)** iç içe kutularını tahtaya çizin.
+- **Yazılım → Program → Kod** iç içe kutularını tahtaya çizin.
 - İlk örneği projeksiyonda birlikte çalıştırın; sonra her öğrencinin kendi adını yazdırmasını isteyin.
 - \`print("5 + 5")\` ile \`print(5 + 5)\` farkını önce **tahmin ettirin**, sonra çalıştırın.
 - Bilerek hata yaptırın (tırnağı silin): hata mesajının bir **yardımcı** olduğunu gösterin.
@@ -63,7 +62,7 @@ Yazılım, program ve kod iç içe geçmiş kavramlardır:
       icerik: `
 ## Programlama dili ve Python
 
-Önceki iki derste problemleri algoritma ve akış şemasıyla **planlamayı** öğrendik. Bu planı bilgisayara anlatmak için **programlama dili** kullanırız. Yüzlerce programlama dili vardır. Aralarında küçük farklar olsa da hepsinde **operatörler, değişkenler, karar ve döngü yapıları** gibi ortak kavramlar bulunur. Bu ünitede bu ortak kavramları öğreneceğiz.
+Önceki iki derste problemleri algoritma ve akış şemasıyla **planlamayı** öğrendik. Bu planı bilgisayara anlatmak için **programlama dili** kullanırız. Yüzlerce programlama dili vardır. Aralarında küçük farklar olsa da hepsinde **operatörler, değişkenler, karar ve döngü yapıları** gibi ortak kavramlar bulunur. Bu derslerde bu ortak kavramları öğreneceğiz.
 
 Biz **Python** [*paytın*] dilini kullanacağız. Python okunması kolay bir dildir ve dünyada en çok öğretilen dillerden biridir.
 
@@ -164,19 +163,19 @@ print("Nasılsın?")`,
       tur: "alistirma",
       alistirma: {
         id: "k1-unite",
-        baslik: "Ünite adını yazdır",
+        baslik: "Üç satır yazdır",
         gorev: `Ekrana **tam olarak** şu üç satırı yazdıran bir program yaz:
 
 \`\`\`
-Programlamaya Giriş ve Algoritma
-3. Ünite
+Python Atölyesi
+Hazırlık Sınıfı
 Programlamanın Temel Kavramları
 \`\`\``,
         baslangicKodu: `# Kodunu bu satırın altına yaz\n`,
-        testler: [{ beklenen: "Programlamaya Giriş ve Algoritma\n3. Ünite\nProgramlamanın Temel Kavramları" }],
+        testler: [{ beklenen: "Python Atölyesi\nHazırlık Sınıfı\nProgramlamanın Temel Kavramları" }],
         ipuclari: ["Her satır için ayrı bir `print()` kullan.", "Büyük/küçük harfler ve noktalama işaretleri de karşılaştırılır. Dikkatli yaz!"],
-        cozum: `print("Programlamaya Giriş ve Algoritma")
-print("3. Ünite")
+        cozum: `print("Python Atölyesi")
+print("Hazırlık Sınıfı")
 print("Programlamanın Temel Kavramları")`,
       },
     },

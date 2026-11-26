@@ -40,6 +40,7 @@ export default function KodEditoru({ deger, degisince, calistir, enAz = 3 }: Pro
         extensions={eklentiler}
         basicSetup={{ foldGutter: false, highlightActiveLine: true, autocompletion: false, tabSize: 4 }}
         indentWithTab
+        onCreateEditor={(v) => { document.fonts?.ready.then(() => v.requestMeasure()); }}
       />
     </div>
   );
