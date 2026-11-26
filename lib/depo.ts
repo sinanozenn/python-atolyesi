@@ -30,26 +30,50 @@ function abone(f: () => void) {
   };
 }
 
-// --- İlerleme ---
-let onbellekHam: string | null = null;
-let onbellek: Record<string, boolean> = {};
+// --- Kayıtlı işaret listeleri (JSON nesnesi, değişmedikçe aynı nesne döner) ---
 const BOS: Record<string, boolean> = {};
+const onbellekler = new Map<string, { ham: string | null; deger: Record<string, boolean> }>();
 
-function ilerlemeOku(): Record<string, boolean> {
-  const ham = oku(ILERLEME);
-  if (ham !== onbellekHam) {
-    onbellekHam = ham;
-    try {
-      onbellek = ham ? JSON.parse(ham) : {};
-    } catch {
-      onbellek = {};
-    }
-  }
-  return onbellek;
+function isaretleriOku(anahtar: string): Record<string, boolean> {
+  const ham = oku(anahtar);
+  const o = onbellekler.get(anahtar);
+  if (o && o.ham === ham) return o.deger;
+  let deger: Record<string, boolean> = {};
+  try {
+    deger = ham ? JSON.parse(ham) : {};
+  } catch {}
+  onbellekler.set(anahtar, { ham, deger });
+  return deger;
 }
+
+// --- İlerleme (tamamlanan görevler) ---
+const ilerlemeOku = () => isaretleriOku(ILERLEME);
 
 export function useIlerleme(): Record<string, boolean> {
   return useSyncExternalStore(abone, ilerlemeOku, () => BOS);
+}
+
+// --- İlk denemede doğru cevaplanan sorular ---
+const SORULAR = "atolye-sorular";
+const sorulariOku = () => isaretleriOku(SORULAR);
+
+export function useSorular(): Record<string, boolean> {
+  return useSyncExternalStore(abone, sorulariOku, () => BOS);
+}
+
+export function soruDogruIsaretle(id: string) {
+  if (sorulariOku()[id]) return;
+  yaz(SORULAR, JSON.stringify({ ...sorulariOku(), [id]: true }));
+}
+
+// --- Puan ---
+export const GOREV_PUANI = 20;
+export const SORU_PUANI = 5;
+
+export function usePuan(): number {
+  const g = useIlerleme();
+  const s = useSorular();
+  return Object.keys(g).length * GOREV_PUANI + Object.keys(s).length * SORU_PUANI;
 }
 
 export function tamamlandiIsaretle(id: string) {
@@ -57,6 +81,7 @@ export function tamamlandiIsaretle(id: string) {
 }
 
 export function ilerlemeyiSifirla() {
+  yaz(SORULAR, null);
   yaz(ILERLEME, null);
   try {
     Object.keys(localStorage)

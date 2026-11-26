@@ -6,10 +6,10 @@ export default function IlerlemeSifirla() {
     <button
       className="dugme dugme-sade"
       onClick={() => {
-        if (confirm("Bu cihazdaki tüm ilerleme ve yazdığın kodlar silinsin mi?")) ilerlemeyiSifirla();
+        if (confirm("Bu cihazdaki puanların, yıldızların ve yazdığın kodlar silinsin mi?")) ilerlemeyiSifirla();
       }}
     >
-      Bu cihazdaki ilerlemeyi sıfırla
+      Puanları ve ilerlemeyi sıfırla
     </button>
   );
 }

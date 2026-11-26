@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import PuanCubugu from "./PuanCubugu";
 
 const baglantilar = [
-  { href: "/dersler", ad: "Dersler" },
+  { href: "/dersler", ad: "Harita" },
   { href: "/ide", ad: "IDE" },
-  { href: "/ogretmen", ad: "Öğretmenler için" },
 ];
 
 export default function UstMenu() {
@@ -15,7 +15,7 @@ export default function UstMenu() {
     <header className="ust-menu">
       <div className="kap ust-menu-ic">
         <Link href="/" className="logo">
-          <span className="logo-kod">&gt;&gt;&gt;</span> Python Atölyesi
+          Python Atölyesi
         </Link>
         <nav>
           {baglantilar.map((b) => (
@@ -24,6 +24,7 @@ export default function UstMenu() {
             </Link>
           ))}
         </nav>
+        <PuanCubugu />
       </div>
     </header>
   );

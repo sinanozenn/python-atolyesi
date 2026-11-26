@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { dersler, dersBul, alistirmalar, kitapKunye } from "@/content";
+import { dersler, dersBul, kitapKunye } from "@/content";
 import DersIcerigi from "@/components/DersIcerigi";
-import DersIlerlemesi from "@/components/DersIlerlemesi";
+import SeviyeBasligi from "@/components/SeviyeBasligi";
 import Markdown from "@/components/Markdown";
 import MotorRozeti from "@/components/MotorRozeti";
 
@@ -26,21 +26,22 @@ export default async function DersSayfasi({ params }: { params: Promise<{ slug: 
     <article className="kap ders">
       <div className="ders-ust">
         <Link href="/dersler" className="geri">
-          İçindekiler
+          Haritaya dön
         </Link>
         <MotorRozeti />
       </div>
 
       <header className="ders-baslik">
-        <span className="ders-no">{ders.sira}</span>
+        <span className="ders-no" aria-hidden="true">{ders.sira === dersler.length ? "Sınav" : ders.sira}</span>
         <div>
+          <p className="ust-etiket">{ders.sira === dersler.length ? "Son seviye" : `Seviye ${ders.sira}`}</p>
           <h1>{ders.baslik}</h1>
           <p className="ders-kunye">
             Kitapta {kitapKunye(ders).bolum === "ünite sonu" ? "ünite sonu" : `bölüm ${kitapKunye(ders).bolum}`}, {kitapKunye(ders).sayfa}. Süre {ders.sure.replace("dk", "dakika")}.
           </p>
         </div>
       </header>
-      <DersIlerlemesi idler={alistirmalar(ders).map((a) => a.id)} />
+      <SeviyeBasligi slug={ders.slug} />
 
       <section className="hedefler">
         <h2>Bu derste</h2>
@@ -63,7 +64,7 @@ export default async function DersSayfasi({ params }: { params: Promise<{ slug: 
       <nav className="ders-gezinme" aria-label="Dersler arası geçiş">
         {onceki ? (
           <Link href={`/dersler/${onceki.slug}`} className="gezinme-bag">
-            <span className="gezinme-yon">Önceki ders</span>
+            <span className="gezinme-yon">Önceki seviye</span>
             <span>{onceki.sira}. {onceki.baslik}</span>
           </Link>
         ) : (
@@ -71,7 +72,7 @@ export default async function DersSayfasi({ params }: { params: Promise<{ slug: 
         )}
         {sonraki ? (
           <Link href={`/dersler/${sonraki.slug}`} className="gezinme-bag gezinme-sonraki">
-            <span className="gezinme-yon">Sonraki ders</span>
+            <span className="gezinme-yon">Sonraki seviye</span>
             <span>{sonraki.sira}. {sonraki.baslik}</span>
           </Link>
         ) : (

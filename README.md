@@ -12,7 +12,8 @@ Lise hazırlık sınıfları için Türkçe, etkileşimli Python dersleri. Pytho
 - İlerleme ve öğrenci kodları tarayıcıda saklanır (hesap yok, kişisel veri yok)
 - 👩‍🏫 Her derste katlanabilir **öğretmen notu**
 - **IDE**: dosya sekmeleri, örnek programlar, .py aç/indir ve canlı `input()` destekli konsol
-- Her örnekte **IDE'de aç** düğmesi ve bir **Öğretmen Rehberi** sayfası
+- Her örnekte **IDE'de aç** düğmesi
+- Oyun haritası: her ders bir seviye; görev başına 20, ilk denemede doğru soru başına 5 puan, seviye yıldızları
 
 ## Çalıştırma
 Node.js 18.18 veya üstü gerekir.
@@ -49,7 +50,7 @@ Site bir alt klasörde yayınlanacaksa (ör. `siteniz.com/python`) derlemeden ö
 
 ## Klasör yapısı
 ```
-app/                  sayfalar (ana sayfa, dersler, IDE, öğretmen rehberi)
+app/                  sayfalar (ana sayfa, harita, dersler, IDE)
 components/           editör, çıktı paneli, alıştırma, soru vb.
 content/              ders içerikleri  ← en çok burayı düzenleyeceksiniz
 lib/                  Python çalıştırıcı, kontrolcü, Türkçe hata mesajları, ilerleme kaydı
