@@ -63,7 +63,7 @@ Yazılım, program ve kod iç içe geçmiş kavramlardır:
       icerik: `
 ## Programlama dili ve Python
 
-Bilgisayara ne yapacağını söylemek için **programlama dili** kullanırız. Yüzlerce programlama dili vardır. Aralarında küçük farklar olsa da hepsinde **operatörler, değişkenler, karar ve döngü yapıları** gibi ortak kavramlar bulunur. Bu ünitede bu ortak kavramları öğreneceğiz.
+Önceki iki derste problemleri algoritma ve akış şemasıyla **planlamayı** öğrendik. Bu planı bilgisayara anlatmak için **programlama dili** kullanırız. Yüzlerce programlama dili vardır. Aralarında küçük farklar olsa da hepsinde **operatörler, değişkenler, karar ve döngü yapıları** gibi ortak kavramlar bulunur. Bu ünitede bu ortak kavramları öğreneceğiz.
 
 Biz **Python** [*paytın*] dilini kullanacağız. Python okunması kolay bir dildir ve dünyada en çok öğretilen dillerden biridir.
 

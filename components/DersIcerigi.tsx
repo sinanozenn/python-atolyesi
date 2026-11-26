@@ -3,6 +3,8 @@ import Markdown from "./Markdown";
 import KodCalistirici from "./KodCalistirici";
 import Soru from "./Soru";
 import Alistirma from "./Alistirma";
+import SemaBlok from "./SemaBlok";
+import Siralama from "./Siralama";
 
 export default function DersIcerigi({ ders }: { ders: Ders }) {
   let alistirmaNo = 0;
@@ -33,6 +35,10 @@ export default function DersIcerigi({ ders }: { ders: Ders }) {
                 {b.altyazi && <figcaption>{b.altyazi}</figcaption>}
               </figure>
             );
+          case "sema":
+            return <SemaBlok key={i} ornek={b.ornek} parcalar={b.parcalar} baslik={b.baslik} altyazi={b.altyazi} />;
+          case "siralama":
+            return <Siralama key={i} baslik={b.baslik} gorev={b.gorev} adimlar={b.adimlar} />;
           case "soru":
             return <Soru key={i} {...b} />;
           case "alistirma":

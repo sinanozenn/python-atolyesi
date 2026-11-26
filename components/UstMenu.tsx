@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 
 const baglantilar = [
   { href: "/dersler", ad: "Dersler" },
+  { href: "/akis", ad: "Akış Şeması Aracı" },
   { href: "/ide", ad: "IDE" },
 ];
 

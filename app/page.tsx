@@ -6,12 +6,14 @@ import KodCalistirici from "@/components/KodCalistirici";
 export default function AnaSayfa() {
   return (
     <>
+      <div className="giris-bant">
       <section className="kap giris">
         <div className="giris-metin">
           <h1>Python ile programlamaya giriş</h1>
           <p>
-            <i>Programlamaya Giriş ve Algoritma</i> dersinin 3. ünitesi: operatörler, değişkenler, veri türleri, karar yapıları ve
-            döngüler. Her dersteki kodları bu sayfada çalıştırabilir, değiştirebilir ve alıştırmalarla pekiştirebilirsin.
+            Önce algoritma ve akış şemasıyla problem çözmeyi, sonra <i>Programlamaya Giriş ve Algoritma</i> dersinin 3. ünitesini
+            öğren: operatörler, değişkenler, veri türleri, karar yapıları ve döngüler. Kodları ve akış şemalarını bu sayfada
+            çalıştırabilirsin.
           </p>
           <div className="dugmeler">
             <Link href={`/dersler/${dersler[0].slug}`} className="dugme dugme-ana">
@@ -26,6 +28,7 @@ export default function AnaSayfa() {
           <KodCalistirici kod={`ad = input("Adın ne? ")\nprint("Merhaba", ad)`} girdiler={["Deniz"]} />
         </div>
       </section>
+      </div>
 
       <section className="kap liste-bolum">
         <h2>Dersler</h2>

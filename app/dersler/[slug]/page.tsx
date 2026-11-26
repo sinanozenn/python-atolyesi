@@ -34,7 +34,7 @@ export default async function DersSayfasi({ params }: { params: Promise<{ slug: 
         <p className="ders-sira">Ders {ders.sira}</p>
         <h1>{ders.baslik}</h1>
         <p className="ders-kunye">
-          Kitapta {kitapKunye(ders).bolum === "ünite sonu" ? "ünite sonu" : `bölüm ${kitapKunye(ders).bolum}`}, {kitapKunye(ders).sayfa}. Süre {ders.sure.replace("dk", "dakika")}.
+          {kitapKunye(ders).etiket}. Süre {ders.sure.replace("dk", "dakika")}.
         </p>
       </header>
 

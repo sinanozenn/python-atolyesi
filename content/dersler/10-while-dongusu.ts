@@ -19,7 +19,7 @@ const ders: Ders = {
 - **Tablo 3.10**'u (aynı problemin for ve while ile çözümü) iki sütun hâlinde tahtaya yazın; farkları öğrencilere buldurun.
 - Sonsuz döngüyü bilerek gösterin (\`i = i + 1\` satırını silin). Site 5 saniye sonra programı durdurur.
 - \`break\` ve \`continue\` kitapta s. 107'deki Bilgi Notu'nda geçiyor.
-- Ünite sonu **9. soru** (while ile çift sayıların toplamı) bu derste. Sayı tahmin oyunu, 7. dersteki 15. Örneği döngüyle geliştirir.
+- Ünite sonu **9. soru** (while ile çift sayıların toplamı) bu derste. Sayı tahmin oyunu, 9. dersteki (if-else) 15. Örneği döngüyle geliştirir.
 `,
   bloklar: [
     {
@@ -243,7 +243,7 @@ print("Kalkış!")`,
       alistirma: {
         id: "k10-tahmin",
         baslik: "Sayı tahmin oyunu (geliştirilmiş)",
-        gorev: `7. dersteki tahmin oyununu (Kitap 15. Örnek) geliştirelim. Gizli sayı **11**. Kullanıcı doğru bulana kadar tahmin istemeye devam et:
+        gorev: `if-else dersindeki tahmin oyununu (Kitap 15. Örnek) geliştirelim. Gizli sayı **11**. Kullanıcı doğru bulana kadar tahmin istemeye devam et:
 
 - Tahmin gizli sayıdan büyükse \`Daha küçük\`
 - Küçükse \`Daha büyük\`

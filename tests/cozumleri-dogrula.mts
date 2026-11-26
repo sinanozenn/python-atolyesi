@@ -6,6 +6,9 @@ import { hazirla } from "../python-motoru/runner-core.mjs";
 import { dersler, alistirmalar } from "../content";
 import { ciktiyiDuzenle } from "../lib/kontrol";
 import path from "node:path";
+import { akisOrnekleri } from "../content/akis-ornekleri";
+import { semaGraf, sema } from "../content/sema";
+import { semayiDenetle, semayiDerle, iziAyir } from "../lib/akis-derleyici";
 
 const { calistir } = await hazirla(loadPyodide, path.resolve("node_modules/pyodide") + "/");
 let hata = 0;
@@ -37,5 +40,19 @@ for (const d of dersler) {
     if (bas) { hata++; console.log(`❌ [${a.id}] başlangıç kodu zaten testleri geçiyor`); }
   }
 }
-console.log(hata ? `\n${hata} sorun bulundu.` : `\n✅ ${dersler.length} ders, ${ids.size} alıştırma: tüm çözümler ve örnekler doğru çalışıyor.`);
+// Akış şeması örnekleri: çizilebiliyor, denetimden geçiyor, Python'a çevrilip doğru çalışıyor mu?
+for (const o of akisOrnekleri) {
+  sema(o.ad, o.parcalar);
+  const g = semaGraf(o.parcalar);
+  const d = semayiDenetle(g);
+  if (d.length) { hata++; console.log(`❌ [akış ${o.id}] denetim:`, d); continue; }
+  const r = calistir(semayiDerle(g), o.test.girdiler, false);
+  const { cikti, iz } = iziAyir(r.cikti);
+  if (r.hata || !iz || ciktiyiDuzenle(cikti) !== ciktiyiDuzenle(o.test.beklenen)) {
+    hata++;
+    console.log(`❌ [akış ${o.id}]\n  beklenen: ${JSON.stringify(o.test.beklenen)}\n  çıktı:    ${JSON.stringify(cikti)}`, r.hata ?? "", iz ? "" : "iz yok");
+  }
+}
+
+console.log(hata ? `\n${hata} sorun bulundu.` : `\n✅ ${dersler.length} ders, ${ids.size} alıştırma: ${akisOrnekleri.length} akış şeması: tüm çözümler ve örnekler doğru çalışıyor.`);
 process.exit(hata ? 1 : 0);

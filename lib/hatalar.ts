@@ -115,6 +115,12 @@ const kurallar: Kural[] = [
     aciklama: () => "Listede olmayan bir sıraya (indekse) ulaşmaya çalıştın. Unutma: sayma **0'dan** başlar; 3 elemanlı listenin son indeksi 2'dir.",
   },
   {
+    tur: "RuntimeError",
+    desen: /SONSUZ_AKIS/,
+    aciklama: () =>
+      "Akış 5000 adımdan uzun sürdüğü için durduruldu. Büyük ihtimalle **sonsuz bir döngü** var: döngüdeki sayaç artıyor mu, karar kutusu bir gün **Hayır** cevabını verecek mi?",
+  },
+  {
     tur: "ZamanAsimi",
     aciklama: () =>
       "Programın çok uzun sürdüğü için durduruldu. Büyük ihtimalle **sonsuz bir döngü** var: `while` koşulunun bir gün yanlış (False) olacağından emin ol — döngü değişkenini artırmayı unutmuş olabilirsin.",

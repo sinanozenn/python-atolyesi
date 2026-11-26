@@ -16,12 +16,12 @@ const ders: Ders = {
   ogretmenNotu: `
 - Kitaptaki 10 sorunun yerleri:
   - **1, 2, 4, 5** → bu sayfada
-  - **3** → 3. ders (Değişkenler)
-  - **6** → 7. ders (if-else)
-  - **7** → 8. ders (elif)
-  - **8** → 9. ders (for)
-  - **9** → 10. ders (while)
-  - **10** → 11. ders (döngü ve karar)
+  - **3** → 5. ders (Değişkenler)
+  - **6** → 9. ders (if-else)
+  - **7** → 10. ders (elif)
+  - **8** → 11. ders (for)
+  - **9** → 12. ders (while)
+  - **10** → 13. ders (döngü ve karar)
 - ⚠️ **2. soruyla ilgili not:** Kitaptaki \`a=5,b=10\` yazımı Python'da **hata verir** (SyntaxError). Sitede doğru yazım \`a = 5\` ve \`b = 10\` olarak iki satırda verildi; doğru cevap değişmez: **Ayşe 55.0**.
 - Bu sayfadaki ek sorular ünitenin tamamını kapsar. Ders sonunda bir **mini sınav** olarak kullanılabilir.
 `,

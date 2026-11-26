@@ -1,4 +1,5 @@
 // Ders içeriklerinin yapısı. Yeni bir ders eklerken bu tiplere uyun.
+import type { Parca } from "./sema";
 
 export type Test = {
   /** input() çağrılarına sırayla verilecek değerler */
@@ -36,7 +37,11 @@ export type Blok =
   | { tur: "soru"; soru: string; kod?: string; secenekler: string[]; dogru: number; aciklama: string }
   | { tur: "alistirma"; alistirma: AlistirmaVerisi }
   /** Akış diyagramı vb. için hazır SVG çizimi */
-  | { tur: "gorsel"; svg: string; altyazi?: string };
+  | { tur: "gorsel"; svg: string; altyazi?: string }
+  /** Akış şeması: `ornek` verilirse content/akis-ornekleri.ts'teki örnek çizilir ve araçta açılabilir */
+  | { tur: "sema"; ornek?: string; parcalar?: Parca[]; baslik?: string; altyazi?: string }
+  /** Karışık verilen adımları doğru sıraya dizme etkinliği */
+  | { tur: "siralama"; baslik: string; gorev: string; adimlar: string[] };
 
 export type Ders = {
   slug: string;
