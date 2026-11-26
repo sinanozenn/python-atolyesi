@@ -1,0 +1,26 @@
+// Tüm derslerin listesi (ders kitabı 3. Ünite sırasıyla). Yeni bir ders eklemek için:
+// 1) content/dersler/ klasörüne yeni bir dosya oluşturun (mevcut bir dersi kopyalayıp başlayabilirsiniz)
+// 2) Aşağıya import edip listeye ekleyin.
+import type { Ders, AlistirmaVerisi } from "./tipler";
+import d01 from "./dersler/01-yazilim-program-kod";
+import d02 from "./dersler/02-operatorler";
+import d03 from "./dersler/03-degiskenler";
+import d04 from "./dersler/04-veri-turleri";
+import d05 from "./dersler/05-veri-turlerinin-kullanimi";
+import d06 from "./dersler/06-diziler";
+import d07 from "./dersler/07-if-else";
+import d08 from "./dersler/08-elif";
+import d09 from "./dersler/09-for-dongusu";
+import d10 from "./dersler/10-while-dongusu";
+import d11 from "./dersler/11-dongu-ve-karar";
+import d12 from "./dersler/12-unite-degerlendirme";
+
+export const dersler: Ders[] = [d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12].sort((a, b) => a.sira - b.sira);
+
+export function dersBul(slug: string): Ders | undefined {
+  return dersler.find((d) => d.slug === slug);
+}
+
+export function alistirmalar(d: Ders): AlistirmaVerisi[] {
+  return d.bloklar.flatMap((b) => (b.tur === "alistirma" ? [b.alistirma] : []));
+}
