@@ -7,11 +7,11 @@
 
 :root {
   --zemin: #ffffff;
-  --sayfa: #fffaf2;
+  --sayfa: #ffffff;
   --yazi: #0f3d3a;
   --soluk: #557370;
-  --cizgi: #e6e0d4;
-  --panel: #f6f1e7;
+  --cizgi: #e2e8e7;
+  --panel: #f3f6f5;
   --vurgu: #0f766e;
   --vurgu-koyu: #115e59;
   --vurgu-acik: #e3f3f1;
@@ -56,7 +56,7 @@ h3 { font-size: 1.12rem; }
 .logo:hover { color: var(--yazi); }
 .ust-menu nav { display: flex; gap: 0.35rem; }
 .ust-menu nav a { color: var(--yazi); font-weight: 700; text-decoration: none; padding: 0.5rem 1.05rem; border-radius: 999px; }
-.ust-menu nav a:hover { background: #efe7d8; color: var(--yazi); }
+.ust-menu nav a:hover { background: #eef5f4; color: var(--yazi); }
 .ust-menu nav a.aktif { background: var(--vurgu); color: #fff; }
 @media (max-width: 640px) { .ust-menu-ic { height: auto; padding-top: 0.8rem; padding-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem; } .ust-menu nav a { padding: 0.4rem 0.75rem; font-size: 0.9rem; } }
 
@@ -329,7 +329,7 @@ h3 { font-size: 1.12rem; }
 }
 
 /* ---------- Ders içi akış şemaları ---------- */
-.sema { margin: 2.25rem 0; padding: 1.2rem 1.2rem 0.9rem; border: 3px solid #e9e2d3; border-radius: 22px; text-align: center; background-color: #fff; background-image: radial-gradient(circle, #d8e8e5 1px, transparent 1.3px); background-size: 18px 18px; }
+.sema { margin: 2.25rem 0; padding: 1.2rem 1.2rem 0.9rem; border: 3px solid #e2ebe9; border-radius: 22px; text-align: center; background-color: #fff; background-image: radial-gradient(circle, #d8e8e5 1px, transparent 1.3px); background-size: 18px 18px; }
 .sema-baslik { text-align: left; font-weight: 600; color: var(--vurgu-koyu); margin-bottom: 0.6rem; }
 .sema-cizim svg { width: auto; max-width: 100%; height: auto; }
 
