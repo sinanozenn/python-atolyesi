@@ -34,8 +34,3 @@ export function kitapKunye(d: Ders): { bolum: string; sayfa: string } {
   return { bolum, sayfa };
 }
 
-/** Dersteki "Düşün bakalım" sorularının kimlikleri (puan için): "<ders>-s<sıra>" */
-export function soruIdleri(d: Ders): string[] {
-  let k = 0;
-  return d.bloklar.flatMap((b) => (b.tur === "soru" ? [`${d.slug}-s${k++}`] : []));
-}

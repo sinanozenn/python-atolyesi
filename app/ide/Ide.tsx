@@ -305,7 +305,7 @@ export default function Ide() {
       </div>
 
       <div className="ide-govde">
-        <div className="ide-editor defter">
+        <div className="ide-editor">
           <CodeMirror
             value={aktifDosya.kod}
             onChange={koduDegistir}

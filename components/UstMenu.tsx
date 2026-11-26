@@ -1,16 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import PuanCubugu from "./PuanCubugu";
 
 const baglantilar = [
-  { href: "/dersler", ad: "Harita" },
+  { href: "/dersler", ad: "Dersler" },
   { href: "/ide", ad: "IDE" },
 ];
 
 export default function UstMenu() {
   const yol = usePathname();
-
   return (
     <header className="ust-menu">
       <div className="kap ust-menu-ic">
@@ -24,7 +22,6 @@ export default function UstMenu() {
             </Link>
           ))}
         </nav>
-        <PuanCubugu />
       </div>
     </header>
   );

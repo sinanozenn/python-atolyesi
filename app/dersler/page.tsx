@@ -1,20 +1,13 @@
-import Harita from "@/components/Harita";
-import IlerlemeSifirla from "@/components/IlerlemeSifirla";
+import DersListesi from "@/components/DersListesi";
 
-export const metadata = { title: "Harita" };
+export const metadata = { title: "Dersler" };
 
-export default function HaritaSayfasi() {
+export default function DerslerSayfasi() {
   return (
     <div className="kap sayfa">
-      <h1 className="piksel-baslik">Harita</h1>
-      <p className="sayfa-alt">
-        Her ders bir seviye. Görev başına 20, ilk denemede doğru bildiğin soru başına 5 puan kazanırsın. Puanın ve yıldızların bu
-        cihazda saklanır.
-      </p>
-      <Harita />
-      <div className="sayfa-son">
-        <IlerlemeSifirla />
-      </div>
+      <h1>Dersler</h1>
+      <p className="sayfa-alt">Dersler ders kitabındaki sırayı izler; her ders bir öncekinin üzerine kurulur.</p>
+      <DersListesi />
     </div>
   );
 }

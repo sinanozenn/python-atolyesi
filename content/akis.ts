@@ -3,19 +3,18 @@
 const stil = `
 <defs>
   <marker id="ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-    <path d="M0,0 L10,5 L0,10 z" fill="#19213d"/>
+    <path d="M0,0 L10,5 L0,10 z" fill="#5b6573"/>
   </marker>
 </defs>
 <style>
-  .k { fill:#fff; stroke:#2a3fd4; stroke-width:2.5 }
-  .bas { fill:#3fb950; stroke:#19213d; stroke-width:2.5 }
-  .kar { fill:#ffd23f; stroke:#19213d; stroke-width:2.5 }
-  .c { stroke:#19213d; stroke-width:2; fill:none; marker-end:url(#ok) }
-  text { font-family: Rubik, system-ui, sans-serif; font-size:15px; fill:#19213d; text-anchor:middle; dominant-baseline:middle }
-  .bas + text { fill:#fff; font-weight:500 }
-  .kod { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size:14px }
-  .e { fill:#2d8a3e; font-weight:700; font-size:14px }
-  .h { fill:#d63a40; font-weight:700; font-size:14px }
+  .k { fill:#fff; stroke:#2f5d8a; stroke-width:1.75 }
+  .bas { fill:#f5f7fa; stroke:#1e2733; stroke-width:1.75 }
+  .kar { fill:#eaf1f8; stroke:#2f5d8a; stroke-width:1.75 }
+  .c { stroke:#5b6573; stroke-width:1.5; fill:none; marker-end:url(#ok) }
+  text { font-family: "IBM Plex Sans", system-ui, sans-serif; font-size:15px; fill:#1e2733; text-anchor:middle; dominant-baseline:middle }
+  .kod { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size:14px }
+  .e { fill:#2e7d4f; font-weight:600; font-size:13px }
+  .h { fill:#b4323a; font-weight:600; font-size:13px }
 </style>`;
 
 const kutu = (x: number, y: number, w: number, h: number, metin: string, sinif = "k", kod = false) =>
@@ -47,7 +46,7 @@ export const ifElseAkis = svg(
     cizgi("M450,260 L450,300 L292,300"),
     cizgi("M280,300 L280,318"),
     kutu(280, 340, 170, 40, "3. işlem (her zaman)"),
-    `<circle cx="280" cy="300" r="4" fill="#19213d"/>`,
+    `<circle cx="280" cy="300" r="4" fill="#5b6573"/>`,
     cizgi("M280,360 L280,372"),
     kutu(280, 385, 100, 26, "Bitir", "bas"),
   ].join(""),
@@ -77,7 +76,7 @@ export const elifAkis = svg(
     cizgi("M60,380 L60,405 L278,405"),
     cizgi("M210,380 L210,405"),
     cizgi("M520,380 L520,405 L302,405"),
-    `<circle cx="290" cy="405" r="4" fill="#19213d"/>`,
+    `<circle cx="290" cy="405" r="4" fill="#5b6573"/>`,
     cizgi("M290,405 L290,420"),
     kutu(290, 445, 120, 40, "4. işlem"),
   ].join(""),

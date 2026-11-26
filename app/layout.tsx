@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import "@fontsource/pixelify-sans/500.css";
-import "@fontsource/pixelify-sans/700.css";
-import "@fontsource/rubik/400.css";
-import "@fontsource/rubik/500.css";
-import "@fontsource/rubik/700.css";
-import "@fontsource/jetbrains-mono/400.css";
-import "@fontsource/jetbrains-mono/600.css";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-sans/400-italic.css";
+import "@fontsource/ibm-plex-sans/500.css";
+import "@fontsource/ibm-plex-sans/600.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
 import "./globals.css";
 import UstMenu from "@/components/UstMenu";
 
@@ -22,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <footer className="alt-bilgi">
           <div className="kap">
-            Python Atölyesi. Kodların senin tarayıcında çalışır; puanın ve yıldızların yalnızca bu cihazda saklanır.
+            Python Atölyesi. Kodlar senin tarayıcında çalışır.
           </div>
         </footer>
       </body>

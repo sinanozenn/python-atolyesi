@@ -6,7 +6,7 @@ import Markdown from "./Markdown";
 import type { AlistirmaVerisi } from "@/content/tipler";
 import { pythonCalistir, useMotorDurumu, type CalismaSonucu } from "@/lib/python";
 import { alistirmayiKontrolEt, type KontrolSonucu } from "@/lib/kontrol";
-import { kayitliKod, koduKaydet, tamamlandiIsaretle, useIlerleme, GOREV_PUANI } from "@/lib/depo";
+import { kayitliKod, koduKaydet } from "@/lib/depo";
 
 export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number }) {
   const [kod, setKod] = useState(a.baslangicKodu);
@@ -17,8 +17,7 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
   const [ipucuSayisi, setIpucuSayisi] = useState(0);
   const [cozumAcik, setCozumAcik] = useState(false);
   const [denemeler, setDenemeler] = useState(0);
-  const ilerleme = useIlerleme();
-  const tamam = !!ilerleme[a.id];
+  const tamam = !!kontrol?.basarili;
   const durum = useMotorDurumu();
   const girdiGerekli = a.testler.some((t) => t.girdiler?.length);
 
@@ -46,7 +45,6 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
     const s = await alistirmayiKontrolEt(kod, a);
     setKontrol(s);
     setDenemeler((d) => d + 1);
-    if (s.basarili) tamamlandiIsaretle(a.id);
     setMesgul(null);
   }
 
@@ -55,9 +53,8 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
   return (
     <section className={tamam ? "alistirma tamam" : "alistirma"} id={a.id}>
       <header className="alistirma-ust">
-        <span className="alistirma-etiket">Görev {no}</span>
+        <span className="alistirma-etiket">Alıştırma {no}</span>
         <h3>{a.baslik}</h3>
-        <span className={tamam ? "puan-cip kazanildi gorev-cip" : "puan-cip gorev-cip"}>{tamam ? `+${GOREV_PUANI} kazanıldı` : `+${GOREV_PUANI} puan`}</span>
       </header>
       <Markdown>{a.gorev}</Markdown>
 
@@ -117,7 +114,7 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
       {kontrol && (
         <div className={kontrol.basarili ? "sonuc basari" : "sonuc uyari"}>
           {kontrol.basarili ? (
-            <div className="sonuc-baslik">Görev tamam! Bütün testler geçti.</div>
+            <div className="sonuc-baslik">Doğru. Bütün testler geçti.</div>
           ) : (
             <div className="sonuc-baslik">Henüz olmadı. Aşağıda hangi testin geçmediğini görebilirsin.</div>
           )}

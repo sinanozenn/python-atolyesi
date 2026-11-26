@@ -6,7 +6,6 @@ import Alistirma from "./Alistirma";
 
 export default function DersIcerigi({ ders }: { ders: Ders }) {
   let alistirmaNo = 0;
-  let soruNo = 0;
   return (
     <>
       {ders.bloklar.map((b, i) => {
@@ -35,7 +34,7 @@ export default function DersIcerigi({ ders }: { ders: Ders }) {
               </figure>
             );
           case "soru":
-            return <Soru key={i} {...b} id={`${ders.slug}-s${soruNo++}`} />;
+            return <Soru key={i} {...b} />;
           case "alistirma":
             alistirmaNo++;
             return <Alistirma key={b.alistirma.id} a={b.alistirma} no={alistirmaNo} />;

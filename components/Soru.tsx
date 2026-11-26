@@ -1,12 +1,10 @@
 "use client";
 import { useState } from "react";
 import Markdown from "./Markdown";
-import { soruDogruIsaretle, useSorular, SORU_PUANI } from "@/lib/depo";
 
-type Props = { id: string; soru: string; kod?: string; secenekler: string[]; dogru: number; aciklama: string };
+type Props = { soru: string; kod?: string; secenekler: string[]; dogru: number; aciklama: string };
 
-export default function Soru({ id, soru, kod, secenekler, dogru, aciklama }: Props) {
-  const kazanildi = !!useSorular()[id];
+export default function Soru({ soru, kod, secenekler, dogru, aciklama }: Props) {
   const [yanlislar, setYanlislar] = useState<number[]>([]);
   const [bitti, setBitti] = useState(false);
   const [dogruBildi, setDogruBildi] = useState(false);
@@ -16,15 +14,14 @@ export default function Soru({ id, soru, kod, secenekler, dogru, aciklama }: Pro
     if (i === dogru) {
       setDogruBildi(true);
       setBitti(true);
-      if (yanlislar.length === 0) soruDogruIsaretle(id);
     } else if (!yanlislar.includes(i)) setYanlislar([...yanlislar, i]);
   }
 
   return (
     <div className="soru">
-      <div className="soru-ust"><span className="soru-etiket">Düşün bakalım</span><span className={kazanildi ? "puan-cip kazanildi" : "puan-cip"}>{kazanildi ? `+${SORU_PUANI} kazanıldı` : `ilk denemede +${SORU_PUANI}`}</span></div>
+      <div className="soru-etiket">Düşün bakalım</div>
       <Markdown>{soru}</Markdown>
-      {kod && <pre className="soru-kod defter">{kod}</pre>}
+      {kod && <pre className="soru-kod">{kod}</pre>}
       <div className="secenekler">
         {secenekler.map((s, i) => {
           let sinif = "secenek";
@@ -45,7 +42,7 @@ export default function Soru({ id, soru, kod, secenekler, dogru, aciklama }: Pro
       )}
       {bitti && (
         <div className={dogruBildi ? "geri-bildirim basari" : "geri-bildirim bilgi"}>
-          <b>{dogruBildi ? (yanlislar.length === 0 ? `Doğru, ilk denemede! +${SORU_PUANI} puan` : "Doğru. Bu sefer puan yok, ama artık biliyorsun.") : `Doğru cevap: ${"ABCDE"[dogru]}`}</b>
+          <b>{dogruBildi ? (yanlislar.length === 0 ? "Doğru, ilk denemede." : "Doğru.") : `Doğru cevap: ${"ABCDE"[dogru]}`}</b>
           <Markdown>{aciklama}</Markdown>
         </div>
       )}
