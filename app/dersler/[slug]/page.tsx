@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { dersler, dersBul, dersRengi, hazirlikMi } from "@/content";
-import type { CSSProperties } from "react";
+import { dersler, dersBul } from "@/content";
 import DersIcerigi from "@/components/DersIcerigi";
 import Markdown from "@/components/Markdown";
 import MotorRozeti from "@/components/MotorRozeti";
@@ -25,60 +24,43 @@ export default async function DersSayfasi({ params }: { params: Promise<{ slug: 
   return (
     <article className="kap ders">
       <div className="ders-ust">
-        <Link href="/dersler" className="geri">
-          Tüm dersler
-        </Link>
+        <Link href="/dersler" className="geri">← Tüm dersler</Link>
         <MotorRozeti />
       </div>
+      <div className="ders-baslik">
+        <span className="ders-simge buyuk">{ders.simge}</span>
+        <div>
+          <div className="ders-no">Ders {ders.sira} · {ders.sure}</div>
+          <h1>{ders.baslik}</h1>
+        </div>
+      </div>
 
-      <header className="ders-baslik">
-        <p className="ders-sira" style={{ "--r": dersRengi(ders) } as CSSProperties}>
-          <span>{ders.sira}</span>
-          {hazirlikMi(ders) ? "Hazırlık dersi" : "Python dersi"}
-        </p>
-        <h1>{ders.baslik}</h1>
-        <p className="ders-kunye">
-          Süre: {ders.sure.replace("dk", "dakika")}
-        </p>
-      </header>
-
-      <section className="hedefler">
-        <h2>Bu derste</h2>
+      <div className="hedefler">
+        <div className="kutu-baslik">🎯 Bu derste öğreneceklerin</div>
         <ul>
           {ders.hedefler.map((h) => (
             <li key={h}>{h}</li>
           ))}
         </ul>
-      </section>
+      </div>
 
       {ders.ogretmenNotu && (
         <details className="ogretmen-notu">
-          <summary>Öğretmen notu</summary>
+          <summary>👩‍🏫 Öğretmen notu</summary>
           <Markdown>{ders.ogretmenNotu}</Markdown>
         </details>
       )}
 
       <DersIcerigi ders={ders} />
 
-      <nav className="ders-gezinme" aria-label="Dersler arası geçiş">
+      <nav className="ders-gezinme">
         {onceki ? (
-          <Link href={`/dersler/${onceki.slug}`} className="gezinme-bag">
-            <span className="gezinme-yon">Önceki ders</span>
-            <span>{onceki.sira}. {onceki.baslik}</span>
-          </Link>
-        ) : (
-          <span />
-        )}
+          <Link href={`/dersler/${onceki.slug}`} className="dugme">← {onceki.baslik}</Link>
+        ) : <span />}
         {sonraki ? (
-          <Link href={`/dersler/${sonraki.slug}`} className="gezinme-bag gezinme-sonraki">
-            <span className="gezinme-yon">Sonraki ders</span>
-            <span>{sonraki.sira}. {sonraki.baslik}</span>
-          </Link>
+          <Link href={`/dersler/${sonraki.slug}`} className="dugme dugme-ana">{sonraki.baslik} →</Link>
         ) : (
-          <Link href="/ide" className="gezinme-bag gezinme-sonraki">
-            <span className="gezinme-yon">Dersler bitti</span>
-            <span>IDE'de serbest çalış</span>
-          </Link>
+          <Link href="/ide" className="dugme dugme-ana">IDE&apos;de serbest çalış →</Link>
         )}
       </nav>
     </article>

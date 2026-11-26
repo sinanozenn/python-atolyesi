@@ -6,7 +6,7 @@ const ders: Ders = {
   sira: 2,
   baslik: "Akış Şeması",
   ozet: "Algoritmaları şekillerle çizmek: semboller, kurallar ve sıralı, kararlı, döngülü şema örnekleri.",
-  simge: "",
+  simge: "🔷",
   sure: "2 × 40 dk",
   kitap: "Hazırlık dersi: Akış şeması",
   hedefler: [
@@ -59,7 +59,7 @@ Akış şemasının faydaları:
 | Paralelkenar | **Çıktı** | Ekrana sonuç yazılırken | Toplamı yaz |
 | Ok | **Akış yönü** | Bir adımdan sonrakine geçişi gösterir | → |
 
-> Bu sitede giriş kutuları **turuncu**, çıktı kutuları **yeşil**, karar kutuları **açık turuncu** renktedir. Böylece şemaya bakınca hangi kutunun ne iş yaptığını hemen görebilirsin.
+> Bu sitede giriş kutuları **sarı**, çıktı kutuları **yeşil**, karar kutuları **turuncu** renktedir. Böylece şemaya bakınca hangi kutunun ne iş yaptığını hemen görebilirsin.
 
 ### Akış şeması çizme kuralları
 

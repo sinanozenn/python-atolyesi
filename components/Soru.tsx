@@ -19,7 +19,7 @@ export default function Soru({ soru, kod, secenekler, dogru, aciklama }: Props) 
 
   return (
     <div className="soru">
-      <div className="soru-etiket">Düşün bakalım</div>
+      <div className="soru-etiket">🤔 Düşün bakalım</div>
       <Markdown>{soru}</Markdown>
       {kod && <pre className="soru-kod">{kod}</pre>}
       <div className="secenekler">
@@ -36,13 +36,13 @@ export default function Soru({ soru, kod, secenekler, dogru, aciklama }: Props) 
       </div>
       {!bitti && yanlislar.length > 0 && (
         <div className="geri-bildirim uyari">
-          <b>Olmadı, bir daha dene.</b>{" "}
+          <b>Tam değil, bir daha dene!</b>{" "}
           <button className="baglanti" onClick={() => setBitti(true)}>Cevabı göster</button>
         </div>
       )}
       {bitti && (
         <div className={dogruBildi ? "geri-bildirim basari" : "geri-bildirim bilgi"}>
-          <b>{dogruBildi ? (yanlislar.length === 0 ? "Doğru, ilk denemede." : "Doğru.") : `Doğru cevap: ${"ABCDE"[dogru]}`}</b>
+          <b>{dogruBildi ? (yanlislar.length === 0 ? "Doğru, ilk denemede! 🎉" : "Doğru! 🎉") : `Doğru cevap: ${"ABCDE"[dogru]}`}</b>
           <Markdown>{aciklama}</Markdown>
         </div>
       )}

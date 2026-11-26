@@ -28,20 +28,20 @@ export const STIL = `
   </marker>
 </defs>
 <style>
-  .s-bas { fill:#0f766e; stroke:#0f5f59; stroke-width:1.5 }
+  .s-bas { fill:#2f6fb0; stroke:#1f4f82; stroke-width:1.5 }
   .s-y.s-bas-y { fill:#ffffff; font-weight:600 }
-  .s-giris { fill:#ffe2ad; stroke:#0f5f59; stroke-width:1.75 }
-  .s-cikis { fill:#b6efe5; stroke:#0f5f59; stroke-width:1.75 }
-  .s-islem { fill:#ffffff; stroke:#0f5f59; stroke-width:1.75 }
-  .s-karar { fill:#ffc4b5; stroke:#0f5f59; stroke-width:1.75 }
+  .s-giris { fill:#fff3d1; stroke:#c99a1a; stroke-width:1.75 }
+  .s-cikis { fill:#e6f6ec; stroke:#1f9d55; stroke-width:1.75 }
+  .s-islem { fill:#ffffff; stroke:#1f4f82; stroke-width:1.75 }
+  .s-karar { fill:#fff3e0; stroke:#e07b00; stroke-width:1.75 }
   .s-cizgi { stroke:#3f5653; stroke-width:1.6; fill:none; marker-end:url(#sema-ok) }
   .s-yol { stroke:#3f5653; stroke-width:1.6; fill:none }
   .s-nokta { fill:#3f5653 }
-  .s-y { font-family: Nunito, system-ui, sans-serif; font-size:15px; fill:#1b2b2a; text-anchor:middle; dominant-baseline:central }
-  .s-kod { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size:14px }
-  .s-e { font-family: Nunito, system-ui, sans-serif; fill:#1f7a4a; font-weight:600; font-size:13px; text-anchor:middle }
-  .s-h { font-family: Nunito, system-ui, sans-serif; fill:#b4323a; font-weight:600; font-size:13px; text-anchor:middle }
-  .s-not { font-family: Nunito, system-ui, sans-serif; fill:#3f5653; font-size:13px; text-anchor:middle }
+  .s-y { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size:15px; fill:#1b2b2a; text-anchor:middle; dominant-baseline:central }
+  .s-kod { font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace; font-size:14px }
+  .s-e { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#1f7a4a; font-weight:600; font-size:13px; text-anchor:middle }
+  .s-h { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#b4323a; font-weight:600; font-size:13px; text-anchor:middle }
+  .s-not { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#3f5653; font-size:13px; text-anchor:middle }
 </style>`;
 
 /** Araçta açılabilen şema biçimi: düğümlerin merkez koordinatları ve bağlantılar. */
@@ -255,7 +255,7 @@ export function semboller(): string {
     ["ok", "Akış yönü", "Adımların hangi sırayla yapılacağını gösterir."],
   ];
   const satirH = 84;
-  const w = 640;
+  const w = 700;
   const icerik = satirlar
     .map(([t, ad, ac], i) => {
       const y = i * satirH + 14;

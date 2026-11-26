@@ -45,13 +45,13 @@ export default function KodCalistirici({ kod: ilkKod, girdiler: ilkGirdiler = []
       />
       {girdiGerekli && (
         <label className="girdiler">
-          <span>Girdiler <small>Programın <code>input()</code> ile soracağı cevaplar, her satıra bir tane.</small></span>
+          <span>⌨️ Girdiler <small>(programın <code>input()</code> ile soracağı değerler — her satıra bir tane)</small></span>
           <textarea value={girdiMetni} onChange={(e) => setGirdiMetni(e.target.value)} rows={Math.max(2, girdiMetni.split("\n").length)} spellCheck={false} />
         </label>
       )}
       <div className="dugmeler">
         <button className="dugme dugme-ana" onClick={calistir} disabled={calisiyor}>
-          {calisiyor ? "Çalışıyor…" : durum === "hazir" ? "▶ Çalıştır" : "Python yükleniyor…"}
+          {calisiyor ? "Çalışıyor…" : durum === "hazir" ? "▶ Çalıştır" : "▶ Çalıştır (Python yükleniyor)"}
         </button>
         <button
           className="dugme"
@@ -62,19 +62,19 @@ export default function KodCalistirici({ kod: ilkKod, girdiler: ilkGirdiler = []
             degisince?.(ilkKod);
           }}
         >
-          Sıfırla
+          ↺ Sıfırla
         </button>
         <button
           className="dugme dugme-sade"
           onClick={() => {
-            ideyeGonder(baslik ? baslik.replace(/^Örnek:?\s*/, "").replace(/^Kitap \d+\. (Örnek|Uygulama):?\s*/, "") : "ornek", kod);
+            ideyeGonder(baslik ? baslik.replace(/^🧪\s*Örnek:?\s*/, "").replace(/^Kitap \d+\. (Örnek|Uygulama):?\s*/, "") : "ornek", kod);
             router.push("/ide");
           }}
           title="Bu kodu IDE'de yeni bir dosya olarak aç"
         >
-          IDE'de aç
+          🧑‍💻 IDE'de aç
         </button>
-        <span className="kisayol">Ctrl + Enter ile de çalışır</span>
+        <span className="kisayol">Kısayol: Ctrl + Enter</span>
       </div>
       {(sonuc || calisiyor) && <CiktiPaneli cikti={sonuc?.cikti ?? ""} hata={sonuc?.hata ?? null} calisiyor={calisiyor} />}
     </div>
