@@ -7,7 +7,7 @@ export type IdeDurumu = { dosyalar: IdeDosyasi[]; aktif: string };
 const ANAHTAR = "atolye-ide";
 const ACILACAK = "atolye-ide-acilacak";
 
-export const VARSAYILAN_KOD = `# 🐍 Python Atölyesi IDE'sine hoş geldin!
+export const VARSAYILAN_KOD = `# Python Atölyesi IDE'sine hoş geldin!
 # Kodunu buraya yaz ve ▶ Çalıştır'a bas (kısayol: Ctrl + Enter).
 # Program input() ile bir şey sorarsa cevabını sağdaki konsola yazabilirsin.
 

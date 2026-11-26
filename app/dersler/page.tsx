@@ -6,10 +6,13 @@ export const metadata = { title: "Dersler" };
 export default function DerslerSayfasi() {
   return (
     <div className="kap sayfa">
-      <h1>Dersler</h1>
-      <p className="sayfa-alt">Dersleri sırayla takip etmeni öneririz; her ders bir öncekinin üzerine kurulur. İlerlemen bu cihazda otomatik kaydedilir.</p>
+      <h1>İçindekiler</h1>
+      <p className="sayfa-alt">
+        Dersleri sırayla takip et; her ders bir öncekinin üzerine kurulur. Kutucuklar alıştırmaları gösterir ve ilerlemen bu
+        cihazda saklanır.
+      </p>
       <DersListesi />
-      <div style={{ marginTop: "2rem" }}>
+      <div className="sayfa-son">
         <IlerlemeSifirla />
       </div>
     </div>

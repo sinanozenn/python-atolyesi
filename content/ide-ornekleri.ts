@@ -4,7 +4,7 @@ export type IdeOrnegi = { ad: string; dosya: string; kod: string };
 
 export const ideOrnekleri: IdeOrnegi[] = [
   {
-    ad: "👋 Merhaba",
+    ad: "Merhaba",
     dosya: "merhaba.py",
     kod: `ad = input("Adın ne? ")
 print("Merhaba", ad + "!")
@@ -12,7 +12,7 @@ print("Python Atölyesi'ne hoş geldin.")
 `,
   },
   {
-    ad: "🧮 Hesap makinesi",
+    ad: "Hesap makinesi",
     dosya: "hesap_makinesi.py",
     kod: `sayi_1 = float(input("1. sayı: "))
 islem = input("İşlem (+, -, *, /): ")
@@ -34,7 +34,7 @@ else:
 `,
   },
   {
-    ad: "🎯 Sayı tahmin oyunu",
+    ad: "Sayı tahmin oyunu",
     dosya: "tahmin_oyunu.py",
     kod: `import random
 
@@ -46,16 +46,16 @@ while True:
     tahmin = int(input("Tahminin: "))
     deneme = deneme + 1
     if tahmin < gizli:
-        print("Daha büyük ⬆️")
+        print("Daha büyük")
     elif tahmin > gizli:
-        print("Daha küçük ⬇️")
+        print("Daha küçük")
     else:
-        print("Bildin! 🎉", deneme, "denemede buldun.")
+        print("Bildin!", deneme, "denemede buldun.")
         break
 `,
   },
   {
-    ad: "✖️ Çarpım tablosu",
+    ad: "Çarpım tablosu",
     dosya: "carpim_tablosu.py",
     kod: `for i in range(1, 11):
     satir = ""
@@ -65,7 +65,7 @@ while True:
 `,
   },
   {
-    ad: "📝 Not ortalaması",
+    ad: "Not ortalaması",
     dosya: "not_ortalamasi.py",
     kod: `notlar = []
 sayi = int(input("Kaç not gireceksin? "))
@@ -91,7 +91,7 @@ else:
 `,
   },
   {
-    ad: "🔢 Tek ve çift ayırıcı",
+    ad: "Tek ve çift ayırıcı",
     dosya: "tek_cift.py",
     kod: `liste = []
 cift = []
@@ -111,7 +111,7 @@ print("Tek:", tek)
 `,
   },
   {
-    ad: "⭐ Yıldız üçgeni",
+    ad: "Yıldız üçgeni",
     dosya: "yildiz.py",
     kod: `boy = int(input("Üçgenin boyu: "))
 for i in range(1, boy + 1):
@@ -119,7 +119,7 @@ for i in range(1, boy + 1):
 `,
   },
   {
-    ad: "🚀 Geri sayım",
+    ad: "Geri sayım",
     dosya: "geri_sayim.py",
     kod: `import time
 
@@ -128,7 +128,7 @@ while sayi > 0:
     print(sayi)
     time.sleep(1)
     sayi = sayi - 1
-print("Kalkış! 🚀")
+print("Kalkış!")
 `,
   },
 ];

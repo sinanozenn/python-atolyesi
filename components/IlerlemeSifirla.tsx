@@ -9,7 +9,7 @@ export default function IlerlemeSifirla() {
         if (confirm("Bu cihazdaki tüm ilerleme ve yazdığın kodlar silinsin mi?")) ilerlemeyiSifirla();
       }}
     >
-      🗑️ Bu cihazdaki ilerlemeyi sıfırla
+      Bu cihazdaki ilerlemeyi sıfırla
     </button>
   );
 }

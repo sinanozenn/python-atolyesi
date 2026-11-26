@@ -4,8 +4,8 @@ import { usePathname } from "next/navigation";
 
 const baglantilar = [
   { href: "/dersler", ad: "Dersler" },
-  { href: "/ide", ad: "🧑‍💻 IDE" },
-  { href: "/ogretmen", ad: "Öğretmenler İçin" },
+  { href: "/ide", ad: "IDE" },
+  { href: "/ogretmen", ad: "Öğretmenler için" },
 ];
 
 export default function UstMenu() {
@@ -15,11 +15,11 @@ export default function UstMenu() {
     <header className="ust-menu">
       <div className="kap ust-menu-ic">
         <Link href="/" className="logo">
-          <span className="logo-simge">🐍</span> Python Atölyesi
+          <span className="logo-kod">&gt;&gt;&gt;</span> Python Atölyesi
         </Link>
         <nav>
           {baglantilar.map((b) => (
-            <Link key={b.href} href={b.href} className={yol.startsWith(b.href) ? "aktif" : ""}>
+            <Link key={b.href} href={b.href} className={yol.startsWith(b.href) ? "aktif" : ""} aria-current={yol.startsWith(b.href) ? "page" : undefined}>
               {b.ad}
             </Link>
           ))}

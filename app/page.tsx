@@ -6,51 +6,36 @@ import KodCalistirici from "@/components/KodCalistirici";
 export default function AnaSayfa() {
   return (
     <>
-      <section className="kahraman">
-        <div className="kap kahraman-ic">
-          <div className="kahraman-metin">
-            <h1>
-              Programlamayı <span className="vurgu">Python</span> ile keşfet
-            </h1>
-            <p className="kahraman-alt">
-              Daha önce hiç kod yazmadın mı? Sorun değil! <i>Programlamaya Giriş ve Algoritma</i> dersinin 3. ünitesini
-              adım adım, okuyarak değil <b>kod yazarak</b> öğren. Hiçbir şey kurmana gerek yok, Python doğrudan tarayıcında çalışır.
+      <section className="giris">
+        <div className="kap giris-ic">
+          <div className="giris-metin">
+            <h1>Python'u kod yazarak öğren.</h1>
+            <p>
+              <i>Programlamaya Giriş ve Algoritma</i> dersinin 3. ünitesi: operatörler, değişkenler, veri türleri, karar
+              yapıları ve döngüler. Daha önce hiç kod yazmadıysan buradan başla. Kurulum yok; yazdığın her kod bu sayfada
+              çalışır.
             </p>
             <div className="dugmeler">
               <Link href={`/dersler/${dersler[0].slug}`} className="dugme dugme-ana dugme-buyuk">
-                🚀 İlk derse başla
+                İlk derse başla
               </Link>
               <Link href="/ide" className="dugme dugme-buyuk">
-                🧑‍💻 IDE'yi aç
+                IDE'yi aç
               </Link>
             </div>
           </div>
-          <div className="kahraman-kod">
-            <KodCalistirici kod={`ad = input("Adın ne? ")\nfor i in range(3):\n    print("Merhaba", ad, "🎉")`} girdiler={["Deniz"]} baslik="Hemen dene!" />
+          <div className="giris-kod">
+            <p className="el-yazisi giris-not">Değiştir, sonra çalıştır:</p>
+            <KodCalistirici kod={`ad = input("Adın ne? ")\nfor i in range(3):\n    print("Merhaba", ad)`} girdiler={["Deniz"]} />
           </div>
         </div>
       </section>
 
-      <section className="kap ozellikler">
-        <div className="ozellik">
-          <div className="ozellik-simge">⚡</div>
-          <h3>Anında dene</h3>
-          <p>Her örneği değiştirip çalıştırabilirsin. Kırmaktan korkma, “Sıfırla” her zaman orada.</p>
-        </div>
-        <div className="ozellik">
-          <div className="ozellik-simge">✅</div>
-          <h3>Otomatik kontrol</h3>
-          <p>Alıştırmalarını “Kontrol Et” ile test et. Yanlışsa nerede hata yaptığını görürsün.</p>
-        </div>
-        <div className="ozellik">
-          <div className="ozellik-simge">🇹🇷</div>
-          <h3>Türkçe hata açıklamaları</h3>
-          <p>Python'un İngilizce hata mesajlarını senin için anlaşılır Türkçeye çeviriyoruz.</p>
-        </div>
-      </section>
-
-      <section className="kap">
-        <h2 className="bolum-basligi">Dersler</h2>
+      <section className="kap icindekiler-bolum">
+        <h2>İçindekiler</h2>
+        <p className="bolum-alt">
+          Dersler kitaptaki sırayı izler. Kutucuklar alıştırmaları gösterir; çözdükçe dolar.
+        </p>
         <DersListesi />
       </section>
     </>

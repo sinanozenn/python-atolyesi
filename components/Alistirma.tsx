@@ -55,9 +55,9 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
   return (
     <section className={tamam ? "alistirma tamam" : "alistirma"} id={a.id}>
       <header className="alistirma-ust">
-        <span className="alistirma-etiket">✏️ Alıştırma {no}</span>
+        <span className="alistirma-etiket">Alıştırma {no}</span>
         <h3>{a.baslik}</h3>
-        {tamam && <span className="tamam-rozeti">✅ Tamamlandı</span>}
+        {tamam && <span className="damga" aria-label="Tamamlandı">Aferin!</span>}
       </header>
       <Markdown>{a.gorev}</Markdown>
 
@@ -65,7 +65,7 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
 
       {girdiGerekli && (
         <label className="girdiler">
-          <span>⌨️ Deneme girdileri <small>(her satıra bir tane — sadece “Çalıştır” için)</small></span>
+          <span>Deneme girdileri <small>Yalnızca “Çalıştır” için; kontrol ederken kendi test girdilerimiz kullanılır.</small></span>
           <textarea value={girdiMetni} onChange={(e) => setGirdiMetni(e.target.value)} rows={Math.max(2, girdiMetni.split("\n").length)} spellCheck={false} />
         </label>
       )}
@@ -75,16 +75,16 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
           {mesgul === "calistir" ? "Çalışıyor…" : "▶ Çalıştır"}
         </button>
         <button className="dugme dugme-ana" onClick={kontrolEt} disabled={!!mesgul}>
-          {mesgul === "kontrol" ? "Kontrol ediliyor…" : durum === "hazir" ? "✔ Kontrol Et" : "✔ Kontrol Et (Python yükleniyor)"}
+          {mesgul === "kontrol" ? "Kontrol ediliyor…" : durum === "hazir" ? "Kontrol et" : "Python yükleniyor…"}
         </button>
         {a.ipuclari.length > 0 && ipucuSayisi < a.ipuclari.length && (
           <button className="dugme dugme-ikincil" onClick={() => setIpucuSayisi(ipucuSayisi + 1)}>
-            💡 İpucu {ipucuSayisi > 0 ? `(${ipucuSayisi}/${a.ipuclari.length})` : ""}
+            {ipucuSayisi > 0 ? `Bir ipucu daha (${ipucuSayisi}/${a.ipuclari.length})` : "İpucu"}
           </button>
         )}
         {(denemeler >= 2 || tamam) && !cozumAcik && (
           <button className="dugme dugme-ikincil" onClick={() => setCozumAcik(true)}>
-            👀 Çözümü göster
+            Çözümü göster
           </button>
         )}
         <button
@@ -96,7 +96,7 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
             setKontrol(null);
           }}
         >
-          ↺ Baştan başla
+          Baştan başla
         </button>
       </div>
 
@@ -104,7 +104,7 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
         <div className="ipuclari">
           {a.ipuclari.slice(0, ipucuSayisi).map((ip, i) => (
             <div key={i} className="ipucu-satiri">
-              <b>💡 İpucu {i + 1}:</b> <Markdown>{ip}</Markdown>
+              <b>İpucu {i + 1}.</b> <Markdown>{ip}</Markdown>
             </div>
           ))}
         </div>
@@ -117,20 +117,20 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
       {kontrol && (
         <div className={kontrol.basarili ? "sonuc basari" : "sonuc uyari"}>
           {kontrol.basarili ? (
-            <div className="sonuc-baslik">🎉 Harika! Tüm testleri geçtin.</div>
+            <div className="sonuc-baslik">Bütün testler geçti. Aferin!</div>
           ) : (
-            <div className="sonuc-baslik">Henüz olmadı — ama yaklaşıyorsun! Aşağıya bak.</div>
+            <div className="sonuc-baslik">Henüz olmadı. Aşağıda hangi testin geçmediğini görebilirsin.</div>
           )}
           <ul className="test-listesi">
             {kontrol.testler.map((t, i) => (
               <li key={i}>
-                {t.gecti ? "✅" : "❌"} Test {i + 1}
+                <span className={t.gecti ? "test-isaret gecti" : "test-isaret kaldi"}>{t.gecti ? "✓" : "✗"}</span> Test {i + 1}
                 {t.test.girdiler?.length ? <> — girdiler: <code>{t.test.girdiler.join(", ")}</code></> : null}
               </li>
             ))}
           </ul>
           {kontrol.kuralHatalari.map((m, i) => (
-            <div key={i} className="kural-hatasi">⚠️ {m}</div>
+            <div key={i} className="kural-hatasi"><Markdown>{m}</Markdown></div>
           ))}
           {ilkHatali && (
             <div className="karsilastirma">
@@ -155,7 +155,7 @@ export default function Alistirma({ a, no }: { a: AlistirmaVerisi; no: number })
 
       {cozumAcik && (
         <div className="cozum">
-          <div className="kucuk-baslik">Örnek çözüm <small>(başka doğru çözümler de olabilir!)</small></div>
+          <div className="kucuk-baslik">Örnek çözüm <small>Başka doğru çözümler de olabilir.</small></div>
           <pre>{a.cozum}</pre>
         </div>
       )}

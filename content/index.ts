@@ -24,3 +24,12 @@ export function dersBul(slug: string): Ders | undefined {
 export function alistirmalar(d: Ders): AlistirmaVerisi[] {
   return d.bloklar.flatMap((b) => (b.tur === "alistirma" ? [b.alistirma] : []));
 }
+
+/** "3.4 Karar Yapıları · 3.4.1 If-else Yapısı · s. 102–105" → { bolum: "3.4.1", sayfa: "s. 102–105" } */
+export function kitapKunye(d: Ders): { bolum: string; sayfa: string } {
+  const sayfa = d.kitap.match(/s\.\s*\d+(?:–\d+)?/)?.[0] ?? "";
+  const numaralar = d.kitap.match(/\b\d+\.\d+(?:\.\d+)*/g);
+  // En ayrıntılı (en çok noktalı) bölüm numarasını al; eşitse ilki
+  const bolum = numaralar ? numaralar.reduce((a, b) => (b.split(".").length > a.split(".").length ? b : a)) : "ünite sonu";
+  return { bolum, sayfa };
+}

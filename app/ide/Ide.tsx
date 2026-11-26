@@ -151,14 +151,14 @@ export default function Ide() {
     if (!m || !aktifDosya) return;
     tampon.current = "";
     setIstem(null);
-    setKonsol([{ tur: "bilgi", metin: `▶ ${aktifDosya.ad} çalıştırılıyor…` }]);
+    setKonsol([{ tur: "bilgi", metin: `${aktifDosya.ad} çalışıyor…` }]);
     const s = await m.calistir(aktifDosya.kod, yedekGirdiler === "" ? [] : yedekGirdiler.split("\n"));
     tamponuBosalt();
     setIstem(null);
     if (s.hata) ekle({ tur: "hata", hata: s.hata });
     ekle({
       tur: "bilgi",
-      metin: s.durduruldu ? "■ Program durduruldu." : `✓ Program bitti (${(s.sureMs / 1000).toFixed(2)} sn)`,
+      metin: s.durduruldu ? "Program durduruldu." : `Program bitti (${(s.sureMs / 1000).toFixed(2)} sn)`,
     });
   }, [aktifDosya, yedekGirdiler, ekle, tamponuBosalt]);
 
@@ -249,7 +249,7 @@ export default function Ide() {
                 }}
                 title="Yeniden adlandırmak için çift tıkla"
               >
-                <span>🐍 {f.ad}</span>
+                <span>{f.ad}</span>
                 <button
                   className="ide-sekme-kapat"
                   aria-label={`${f.ad} dosyasını sil`}
@@ -278,7 +278,7 @@ export default function Ide() {
             }}
             aria-label="Örnek programlar"
           >
-            <option value="">📚 Örnekler</option>
+            <option value="">Örnek programlar</option>
             {ideOrnekleri.map((o, i) => (
               <option key={o.dosya} value={i}>
                 {o.ad}
@@ -286,11 +286,11 @@ export default function Ide() {
             ))}
           </select>
           <button className="dugme" onClick={() => dosyaSecici.current?.click()} title="Bilgisayarından .py dosyası aç">
-            📂 Aç
+            Aç
           </button>
           <input ref={dosyaSecici} type="file" accept=".py,.txt" hidden onChange={dosyaAc} />
           <button className="dugme" onClick={indir} title="Bu dosyayı bilgisayarına indir">
-            💾 İndir
+            İndir
           </button>
           {calisiyor ? (
             <button className="dugme dugme-durdur" onClick={durdur}>
@@ -305,7 +305,7 @@ export default function Ide() {
       </div>
 
       <div className="ide-govde">
-        <div className="ide-editor">
+        <div className="ide-editor defter">
           <CodeMirror
             value={aktifDosya.kod}
             onChange={koduDegistir}
@@ -320,7 +320,7 @@ export default function Ide() {
           {!canli && girdiGerekli && (
             <label className="girdiler ide-yedek-girdiler">
               <span>
-                ⌨️ Girdiler <small>(bu bağlantıda canlı giriş desteklenmiyor; input() cevaplarını buraya, her satıra bir tane yaz)</small>
+                Girdiler <small>Bu bağlantıda canlı giriş desteklenmiyor; input() cevaplarını buraya, her satıra bir tane yaz.</small>
               </span>
               <textarea value={yedekGirdiler} onChange={(e) => setYedekGirdiler(e.target.value)} rows={3} spellCheck={false} />
             </label>
@@ -330,7 +330,7 @@ export default function Ide() {
               <span>Konsol</span>
               <span className={`ide-durum ide-durum-${durum}`}>{durumYazisi[durum]}</span>
               <button className="ide-temizle" onClick={() => setKonsol([])}>
-                🧹 Temizle
+                Temizle
               </button>
             </div>
             <div className="ide-konsol-icerik">

@@ -1,18 +1,20 @@
 "use client";
 import { useIlerleme } from "@/lib/depo";
 
+// Her alıştırma için defterdeki gibi bir kutucuk; çözülenler işaretlenir.
 export default function DersIlerlemesi({ idler, kucuk }: { idler: string[]; kucuk?: boolean }) {
   const ilerleme = useIlerleme();
   const biten = idler.filter((id) => ilerleme[id]).length;
-  const yuzde = idler.length ? Math.round((biten / idler.length) * 100) : 0;
   return (
-    <div className={kucuk ? "ilerleme kucuk" : "ilerleme"}>
-      <div className="ilerleme-cubuk">
-        <div className="ilerleme-dolu" style={{ width: `${yuzde}%` }} />
-      </div>
-      <span className="ilerleme-yazi">
-        {biten === idler.length && idler.length > 0 ? "✅ Tamamlandı" : `${biten}/${idler.length} alıştırma`}
+    <span className={kucuk ? "ilerleme kucuk" : "ilerleme"} title={`${biten} / ${idler.length} alıştırma tamamlandı`}>
+      <span className="ilerleme-kutular" aria-hidden="true">
+        {idler.map((id) => (
+          <span key={id} className={ilerleme[id] ? "kutucuk dolu" : "kutucuk"} />
+        ))}
       </span>
-    </div>
+      <span className="ilerleme-yazi">
+        {kucuk ? `${biten}/${idler.length}` : biten === idler.length && idler.length > 0 ? "Bütün alıştırmalar tamam" : `${biten} / ${idler.length} alıştırma`}
+      </span>
+    </span>
   );
 }

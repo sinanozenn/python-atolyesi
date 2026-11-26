@@ -3,18 +3,18 @@
 const stil = `
 <defs>
   <marker id="ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-    <path d="M0,0 L10,5 L0,10 z" fill="#5d6779"/>
+    <path d="M0,0 L10,5 L0,10 z" fill="#26272b"/>
   </marker>
 </defs>
 <style>
-  .k { fill:#fff; stroke:#2f6fb0; stroke-width:2 }
-  .bas { fill:#e6f6ec; stroke:#1f9d55; stroke-width:2 }
-  .kar { fill:#fff7d6; stroke:#d4a400; stroke-width:2 }
-  .c { stroke:#5d6779; stroke-width:2; fill:none; marker-end:url(#ok) }
-  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size:15px; fill:#1d2433; text-anchor:middle; dominant-baseline:middle }
-  .kod { font-family: ui-monospace, Menlo, Consolas, monospace; font-size:14px }
-  .e { fill:#1f9d55; font-weight:700; font-size:13px }
-  .h { fill:#d64545; font-weight:700; font-size:13px }
+  .k { fill:#fff; stroke:#1d3178; stroke-width:2 }
+  .bas { fill:#fbfbf8; stroke:#26272b; stroke-width:2 }
+  .kar { fill:#fff06a; stroke:#26272b; stroke-width:2 }
+  .c { stroke:#26272b; stroke-width:1.75; fill:none; marker-end:url(#ok) }
+  text { font-family: "Atkinson Hyperlegible Next", system-ui, sans-serif; font-size:15px; fill:#26272b; text-anchor:middle; dominant-baseline:middle }
+  .kod { font-family: "Atkinson Hyperlegible Mono", ui-monospace, Menlo, monospace; font-size:14px }
+  .e { fill:#1f7a4a; font-weight:700; font-size:14px }
+  .h { fill:#c8232f; font-weight:700; font-size:14px }
 </style>`;
 
 const kutu = (x: number, y: number, w: number, h: number, metin: string, sinif = "k", kod = false) =>
@@ -46,7 +46,7 @@ export const ifElseAkis = svg(
     cizgi("M450,260 L450,300 L292,300"),
     cizgi("M280,300 L280,318"),
     kutu(280, 340, 170, 40, "3. işlem (her zaman)"),
-    `<circle cx="280" cy="300" r="4" fill="#5d6779"/>`,
+    `<circle cx="280" cy="300" r="4" fill="#26272b"/>`,
     cizgi("M280,360 L280,372"),
     kutu(280, 385, 100, 26, "Bitir", "bas"),
   ].join(""),
@@ -76,7 +76,7 @@ export const elifAkis = svg(
     cizgi("M60,380 L60,405 L278,405"),
     cizgi("M210,380 L210,405"),
     cizgi("M520,380 L520,405 L302,405"),
-    `<circle cx="290" cy="405" r="4" fill="#5d6779"/>`,
+    `<circle cx="290" cy="405" r="4" fill="#26272b"/>`,
     cizgi("M290,405 L290,420"),
     kutu(290, 445, 120, 40, "4. işlem"),
   ].join(""),

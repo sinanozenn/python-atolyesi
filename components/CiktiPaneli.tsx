@@ -12,7 +12,7 @@ export default function CiktiPaneli({ cikti, hata, calisiyor }: { cikti: string;
       ) : (
         <>
           {cikti && <pre className="cikti-metin">{cikti}</pre>}
-          {!cikti && !hata && <pre className="cikti-metin soluk">(Programın ekrana bir şey yazmadı)</pre>}
+          {!cikti && !hata && <pre className="cikti-metin soluk">Program ekrana bir şey yazmadı.</pre>}
           {hata && <HataKutusu hata={hata} />}
         </>
       )}
@@ -25,7 +25,7 @@ export function HataKutusu({ hata }: { hata: PythonHatasi }) {
   return (
     <div className="hata">
       <div className="hata-baslik">
-        🐞 Bir hata var{hata.satir ? <> — <b>{hata.satir}. satır</b></> : null}
+        {hata.satir ? `Hata, ${hata.satir}. satırda` : hata.tur === "ZamanAsimi" ? "Program durduruldu" : "Hata"}
       </div>
       <Markdown>{hatayiAcikla(hata)}</Markdown>
       {hata.ayrinti && <pre className="hata-ayrinti">{hata.ayrinti}</pre>}

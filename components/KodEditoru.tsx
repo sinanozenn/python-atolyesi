@@ -33,7 +33,7 @@ export default function KodEditoru({ deger, degisince, calistir, enAz = 3 }: Pro
     [calistir]
   );
   return (
-    <div className="editor" style={{ ["--en-az-satir" as string]: enAz }}>
+    <div className="editor defter" style={{ ["--en-az-satir" as string]: enAz }}>
       <CodeMirror
         value={deger}
         onChange={degisince}

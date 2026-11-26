@@ -6,7 +6,7 @@ export const metadata = { title: "Öğretmenler İçin" };
 export default function OgretmenSayfasi() {
   return (
     <div className="kap sayfa okunur">
-      <h1>👩‍🏫 Öğretmenler İçin Rehber</h1>
+      <h1>Öğretmenler için</h1>
       <p className="sayfa-alt">Site, <b>Programlamaya Giriş ve Algoritma</b> ders kitabının <b>3. Ünitesi (Programlamanın Temel Kavramları)</b> sırasını izler. Kitaptaki örnekler, uygulamalar, etkinlikler ve ölçme soruları siteye çalıştırılabilir hâlde aktarılmıştır. Hem sınıfta öğretmen eşliğinde hem de öğrencilerin evde kendi başlarına çalışması için tasarlandı.</p>
 
       <h2>Kitapla ilgili düzeltme notları</h2>
@@ -40,7 +40,7 @@ export default function OgretmenSayfasi() {
         <tbody>
           {dersler.map((d) => (
             <tr key={d.slug}>
-              <td><Link href={`/dersler/${d.slug}`}>{d.simge} {d.baslik}</Link></td>
+              <td><Link href={`/dersler/${d.slug}`}>{d.sira}. {d.baslik}</Link></td>
               <td>{d.kitap}</td>
               <td>{d.sure}</td>
               <td>{alistirmalar(d).map((a) => a.baslik).join(" · ")}</td>

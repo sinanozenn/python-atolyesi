@@ -16,13 +16,13 @@ export default function DersIcerigi({ ders }: { ders: Ders }) {
             return (
               <div key={i} className="ornek">
                 {b.aciklama && <p className="ornek-aciklama">{b.aciklama}</p>}
-                <KodCalistirici kod={b.kod} girdiler={b.girdiler} baslik={b.baslik ? `🧪 Örnek: ${b.baslik}` : "🧪 Örnek"} />
+                <KodCalistirici kod={b.kod} girdiler={b.girdiler} baslik={b.baslik ? `Örnek: ${b.baslik}` : "Örnek"} />
               </div>
             );
           case "ipucu":
             return (
               <aside key={i} className={`kutu kutu-${b.renk ?? "bilgi"}`}>
-                {b.baslik && <div className="kutu-baslik">{b.renk === "uyari" ? "⚠️" : b.renk === "basari" ? "✅" : "💡"} {b.baslik}</div>}
+                {b.baslik && <div className="kutu-baslik">{b.baslik}</div>}
                 <Markdown>{b.icerik}</Markdown>
               </aside>
             );
