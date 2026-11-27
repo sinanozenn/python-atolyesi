@@ -3,6 +3,8 @@
 // 1) content/dersler/ klasörüne yeni bir dosya oluşturun (mevcut bir dersi kopyalayıp başlayabilirsiniz)
 // 2) Aşağıya import edip SIRA listesinde istediğiniz yere ekleyin. Ders numaraları bu sıraya göre otomatik verilir.
 import type { Ders, AlistirmaVerisi } from "./tipler";
+import { ekler } from "./ekler";
+import type { Blok } from "./tipler";
 import h01 from "./dersler/00a-algoritma";
 import h02 from "./dersler/00b-akis-semasi";
 import d01 from "./dersler/01-yazilim-program-kod";
@@ -20,7 +22,15 @@ import d12 from "./dersler/12-unite-degerlendirme";
 
 const SIRA: Ders[] = [h01, h02, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12];
 
-export const dersler: Ders[] = SIRA.map((d, i) => ({ ...d, sira: i + 1 }));
+export const dersler: Ders[] = SIRA.map((d, i) => ({ ...d, sira: i + 1, bloklar: ekleriYerlestir(d.bloklar, ekler[d.slug]) }));
+
+/** Ek bloklar (content/ekler) dersin sonundaki "Kontrol noktası" kutusundan hemen önce yer alır. */
+function ekleriYerlestir(bloklar: Blok[], ek?: Blok[]): Blok[] {
+  if (!ek?.length) return bloklar;
+  const son = bloklar[bloklar.length - 1];
+  const kapanis = son?.tur === "ipucu" && son.renk === "basari";
+  return kapanis ? [...bloklar.slice(0, -1), ...ek, son] : [...bloklar, ...ek];
+}
 
 export function dersBul(slug: string): Ders | undefined {
   return dersler.find((d) => d.slug === slug);
