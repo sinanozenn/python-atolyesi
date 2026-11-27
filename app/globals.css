@@ -138,8 +138,6 @@ h1, h2, h3 { line-height: 1.25; }
 .ders-baslik h1 { margin: 0; font-size: 2.1rem; }
 .hedefler { background: var(--kart); border-radius: var(--yaricap); padding: 1rem 1.4rem; box-shadow: var(--golge); margin: 1rem 0; }
 .hedefler ul { margin: 0.4rem 0 0; padding-left: 1.3rem; }
-.ogretmen-notu { background: #f3eefc; border: 1px solid #ddd0f5; border-radius: var(--yaricap); padding: 0.75rem 1.25rem; margin: 1rem 0; }
-.ogretmen-notu summary { cursor: pointer; font-weight: 700; color: #5b3a9b; }
 .ders-gezinme { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--cizgi); flex-wrap: wrap; }
 
 .md h2 { margin: 2.25rem 0 0.75rem; font-size: 1.55rem; }

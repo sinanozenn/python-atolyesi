@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { dersler, dersBul } from "@/content";
 import DersIcerigi from "@/components/DersIcerigi";
-import Markdown from "@/components/Markdown";
 import MotorRozeti from "@/components/MotorRozeti";
 
 export function generateStaticParams() {
@@ -44,12 +43,6 @@ export default async function DersSayfasi({ params }: { params: Promise<{ slug: 
         </ul>
       </div>
 
-      {ders.ogretmenNotu && (
-        <details className="ogretmen-notu">
-          <summary>👩‍🏫 Öğretmen notu</summary>
-          <Markdown>{ders.ogretmenNotu}</Markdown>
-        </details>
-      )}
 
       <DersIcerigi ders={ders} />
 
