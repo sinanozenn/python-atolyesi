@@ -54,8 +54,7 @@ print("Gruba giremeyen:", ogrenci % grup)`,
   {
     tur: "ornek",
     baslik: "Örnek · 🟡 Orta: Dakikayı saate çevir",
-    aciklama: "Bir film 135 dakika. // ve % ile saat ve dakikaya ayırıyoruz. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
-    izle: true,
+    aciklama: "Bir film 135 dakika. // ve % ile saat ve dakikaya ayırıyoruz.",
     kod: `sure = 135
 saat = sure // 60
 dakika = sure % 60

@@ -54,8 +54,7 @@ print("Ortalama:", sum(notlar) / len(notlar))`,
   {
     tur: "ornek",
     baslik: "Örnek · 🟡 Orta: Alışveriş listesi",
-    aciklama: "Eleman ekleyip silerek listeyi güncelliyoruz; in ile bir elemanın listede olup olmadığına bakıyoruz. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
-    izle: true,
+    aciklama: "Eleman ekleyip silerek listeyi güncelliyoruz; in ile bir elemanın listede olup olmadığına bakıyoruz.",
     kod: `liste = ["ekmek", "süt"]
 liste.append("yumurta")
 liste.append("peynir")

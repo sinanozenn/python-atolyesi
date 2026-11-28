@@ -15,11 +15,11 @@ type Props = {
   enAz?: number;
   /** Değişiklik olunca dışarı bildir (ör. oyun alanında kaydetmek için) */
   degisince?: (kod: string) => void;
-  /** true ise "Adım adım çalıştır" düğmesi gösterilir */
+  /** "Adım adım çalıştır" düğmesi gösterilsin mi (varsayılan: evet) */
   izle?: boolean;
 };
 
-export default function KodCalistirici({ kod: ilkKod, girdiler: ilkGirdiler = [], baslik, enAz, degisince, izle }: Props) {
+export default function KodCalistirici({ kod: ilkKod, girdiler: ilkGirdiler = [], baslik, enAz, degisince, izle = true }: Props) {
   const [kod, setKod] = useState(ilkKod);
   const [girdiMetni, setGirdiMetni] = useState(ilkGirdiler.join("\n"));
   const [sonuc, setSonuc] = useState<CalismaSonucu | null>(null);

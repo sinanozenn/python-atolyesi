@@ -32,7 +32,7 @@ export type AlistirmaVerisi = {
 
 export type Blok =
   | { tur: "metin"; icerik: string } // Markdown
-  | { tur: "ornek"; baslik?: string; kod: string; girdiler?: string[]; aciklama?: string; /** Örnek bilerek hata veriyorsa true */ hataBekleniyor?: boolean; /** "Adım adım çalıştır" düğmesi gösterilsin mi */ izle?: boolean }
+  | { tur: "ornek"; baslik?: string; kod: string; girdiler?: string[]; aciklama?: string; /** Örnek bilerek hata veriyorsa true */ hataBekleniyor?: boolean }
   | { tur: "ipucu"; renk?: "bilgi" | "uyari" | "basari"; baslik?: string; icerik: string }
   | { tur: "soru"; soru: string; kod?: string; secenekler: string[]; dogru: number; aciklama: string }
   | { tur: "alistirma"; alistirma: AlistirmaVerisi }

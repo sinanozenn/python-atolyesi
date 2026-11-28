@@ -23,8 +23,7 @@ Dikkat: Sayaç, toplam ve liste **döngüden önce** oluşturulur; sonuç **dön
   {
     tur: "ornek",
     baslik: "Örnek · 🟢 Kolay: Sayma kalıbı",
-    aciklama: "Listede 50 ve üzeri kaç not olduğunu sayıyoruz. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
-    izle: true,
+    aciklama: "Listede 50 ve üzeri kaç not olduğunu sayıyoruz.",
     kod: `notlar = [45, 78, 90, 32, 66, 50, 49]
 gecen = 0
 for n in notlar:

@@ -41,8 +41,7 @@ else:
   {
     tur: "ornek",
     baslik: "Örnek · 🟢 Kolay: Yaş grubu",
-    aciklama: "Aralıklar küçükten büyüğe kontrol ediliyor. Sınır değerlerini (12, 13, 17, 18) dene. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
-    izle: true,
+    aciklama: "Aralıklar küçükten büyüğe kontrol ediliyor. Sınır değerlerini (12, 13, 17, 18) dene.",
     kod: `yas = int(input("Yaş: "))
 if yas <= 12:
     print("Çocuk")

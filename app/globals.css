@@ -430,6 +430,8 @@ h1, h2, h3 { line-height: 1.25; }
 .izleme-kod li.siradaki .izleme-ok { color: #c77700; }
 .izleme-kod li.calisan { background: #e9f7ef; }
 .izleme-kod li.calisan .izleme-ok { color: #1f9d55; }
+.izleme-kod li.hatali { background: var(--kirmizi-acik); }
+.izleme-kod li.hatali .izleme-ok { color: #c0392b; }
 .izleme-yan { padding: 0.6rem 0.9rem 0.8rem; min-width: 0; }
 .izleme-baslik { font-size: 0.78rem; font-weight: 700; color: var(--soluk); margin: 0.3rem 0 0.35rem; }
 .izleme-bos { margin: 0 0 0.5rem; font-size: 0.88rem; color: var(--soluk); }

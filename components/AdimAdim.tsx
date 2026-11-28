@@ -28,7 +28,9 @@ export default function AdimAdim({ kod, iz, kapat }: { kod: string; iz: IzSonucu
   const calisanSatir = onceki?.satir ?? null;
 
   let durumMetni: string;
-  if (adim === 0) durumMetni = `Program başlıyor. İlk çalışacak satır: ${su.satir}.`;
+  if (adim === 0 && su.satir === null)
+    durumMetni = iz.hata ? `${iz.hata.satir ?? "Bir"}. satırda yazım hatası var; program hiç çalışmadı.` : "Çalışacak bir satır yok.";
+  else if (adim === 0) durumMetni = `Program başlıyor. İlk çalışacak satır: ${su.satir}.`;
   else if (bitti && iz.hata) durumMetni = `${calisanSatir}. satırda hata oluştu, program durdu.`;
   else if (bitti) durumMetni = iz.kesildi ? "Çok fazla adım var; izleme burada durduruldu." : `${calisanSatir}. satır çalıştı. Program bitti.`;
   else durumMetni = `${calisanSatir}. satır çalıştı. Sırada ${su.satir}. satır var.`;
@@ -49,10 +51,11 @@ export default function AdimAdim({ kod, iz, kapat }: { kod: string; iz: IzSonucu
         <ol className="izleme-kod" aria-label="Kod">
           {satirlar.map((s, i) => {
             const no = i + 1;
-            const sinif = no === su.satir ? "siradaki" : no === calisanSatir ? "calisan" : "";
+            const hataSatiri = bitti && iz.hata?.satir === no;
+            const sinif = hataSatiri ? "hatali" : no === su.satir ? "siradaki" : no === calisanSatir ? "calisan" : "";
             return (
               <li key={i} className={sinif}>
-                <span className="izleme-ok">{no === su.satir ? "➜" : no === calisanSatir ? "✓" : ""}</span>
+                <span className="izleme-ok">{hataSatiri ? "✗" : no === su.satir ? "➜" : no === calisanSatir ? "✓" : ""}</span>
                 <span className="izleme-no">{no}</span>
                 <code>{s || " "}</code>
               </li>
@@ -94,7 +97,7 @@ export default function AdimAdim({ kod, iz, kapat }: { kod: string; iz: IzSonucu
 
       <p className={bitti && iz.hata ? "izleme-durum hata" : "izleme-durum"}>
         {durumMetni}
-        {bitti && iz.hata && <> {iz.hata.mesaj}</>}
+        {bitti && iz.hata && <> <code>{iz.hata.mesaj}</code></>}
       </p>
 
       <div className="izleme-dugmeler">

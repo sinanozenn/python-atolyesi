@@ -29,8 +29,7 @@ print("En sevdiğim ders: Programlama")`,
   {
     tur: "ornek",
     baslik: "Örnek · 🟢 Kolay: Tırnaklı ve tırnaksız",
-    aciklama: "İlk satır tırnak içinde olduğu için olduğu gibi yazılır; ikinci satırda Python önce hesap yapar. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
-    izle: true,
+    aciklama: "İlk satır tırnak içinde olduğu için olduğu gibi yazılır; ikinci satırda Python önce hesap yapar.",
     kod: `print("8 * 7")
 print(8 * 7)
 print("8 * 7 =", 8 * 7)`,
