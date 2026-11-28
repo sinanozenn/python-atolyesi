@@ -279,16 +279,10 @@ export default function Ide() {
             aria-label="Örnek programlar"
           >
             <option value="">Örnek programlar</option>
-            {(["Kolay", "Orta", "Zor"] as const).map((seviye) => (
-              <optgroup key={seviye} label={seviye}>
-                {ideOrnekleri.map((o, i) =>
-                  o.seviye === seviye ? (
-                    <option key={o.dosya} value={i}>
-                      {i + 1}. {o.ad}
-                    </option>
-                  ) : null
-                )}
-              </optgroup>
+            {ideOrnekleri.map((o, i) => (
+              <option key={o.dosya} value={i}>
+                {i + 1}. {o.ad}
+              </option>
             ))}
           </select>
           <button className="dugme" onClick={() => dosyaSecici.current?.click()} title="Bilgisayarından .py dosyası aç">
