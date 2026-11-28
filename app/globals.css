@@ -155,7 +155,11 @@ h1, h2, h3 { line-height: 1.25; }
 .ornek-aciklama { margin: 0 0 0.5rem; color: var(--soluk); }
 .calistirici { background: var(--kart); border-radius: var(--yaricap); padding: 0.9rem; box-shadow: var(--golge); margin: 1rem 0; }
 .calistirici-baslik { font-weight: 700; font-size: 0.85rem; color: var(--soluk); margin: 0 0 0.5rem 0.2rem; }
-.editor { border: 1px solid var(--cizgi); border-radius: 10px; overflow: hidden; }
+.editor { position: relative; border: 1px solid var(--cizgi); border-radius: 10px; overflow: hidden; }
+.kopyala { position: absolute; top: 6px; right: 6px; z-index: 5; font: inherit; font-size: 0.75rem; font-weight: 600; line-height: 1; padding: 0.35rem 0.55rem; border-radius: 6px; border: 1px solid var(--cizgi); background: rgba(255, 255, 255, 0.92); color: var(--soluk); cursor: pointer; opacity: 0.75; transition: opacity 0.15s, color 0.15s, border-color 0.15s; }
+.editor:hover .kopyala, .kopyala:focus-visible { opacity: 1; }
+.kopyala:hover { color: var(--mavi); border-color: var(--mavi); }
+.kopyala.tamam { opacity: 1; color: #1f9d55; border-color: #1f9d55; }
 .editor .cm-editor { font-size: var(--kod-boyut); }
 .editor .cm-editor.cm-focused { outline: none; }
 .editor:focus-within { border-color: var(--mavi); box-shadow: 0 0 0 3px rgba(47, 111, 176, 0.15); }
