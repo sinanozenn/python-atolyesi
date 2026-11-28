@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { dersler, dersBul } from "@/content";
+import DersEtiketi from "@/components/DersEtiketi";
 import DersIcerigi from "@/components/DersIcerigi";
 import MotorRozeti from "@/components/MotorRozeti";
 
@@ -27,7 +28,7 @@ export default async function DersSayfasi({ params }: { params: Promise<{ slug: 
         <MotorRozeti />
       </div>
       <div className="ders-baslik">
-        <span className="ders-simge buyuk">{ders.simge}</span>
+        <DersEtiketi ders={ders} buyuk />
         <div>
           <div className="ders-no">Ders {ders.sira} · {ders.sure}</div>
           <h1>{ders.baslik}</h1>

@@ -5,7 +5,7 @@ const ders: Ders = {
   sira: 3,
   baslik: "Değişkenler",
   ozet: "Verileri isimli kutularda sakla, değiştir ve işlemlerde kullan.",
-  simge: "📦",
+  simge: "x = 5",
   sure: "40 dk",
   kitap: "3.1.2 Değişkenler · s. 88–91",
   hedefler: [

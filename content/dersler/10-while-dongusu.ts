@@ -6,7 +6,7 @@ const ders: Ders = {
   sira: 10,
   baslik: "Döngü Yapıları: while ve Sayaç",
   ozet: "Şart sağlandığı sürece tekrar et: while döngüsü, sayaç yapısı, break ve continue.",
-  simge: "🔄",
+  simge: "while",
   sure: "2 × 40 dk",
   kitap: "3.5.2 While Döngüsü · 3.5.3 Sayaç Yapısı · s. 111–114",
   hedefler: [

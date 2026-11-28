@@ -53,7 +53,7 @@ export function kitapKunye(d: Ders): { bolum: string; sayfa: string; etiket: str
 
 
 /** Her derse sırayla verilen renk (kartlar ve ders sayfası rozeti). */
-const RENKLER = ["#0f766e", "#e8930c", "#14a394", "#f0607a", "#0e95d6", "#6fae12"];
+const RENKLER = ["#2f6fb0", "#0e9f8e", "#7c5cc4", "#e07b00", "#d1456b", "#3a8f3a", "#1f7fae", "#a8611c"];
 export function dersRengi(d: Ders): string {
   return RENKLER[(d.sira - 1) % RENKLER.length];
 }

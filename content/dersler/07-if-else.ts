@@ -6,7 +6,7 @@ const ders: Ders = {
   sira: 7,
   baslik: "Karar Yapıları: if-else",
   ozet: "Programına karar verdir: şart doğruysa bir işi, yanlışsa başka bir işi yap.",
-  simge: "🔀",
+  simge: "if :",
   sure: "2 × 40 dk",
   kitap: "3.4 Karar Yapıları · 3.4.1 If-else Yapısı · s. 102–105",
   hedefler: [

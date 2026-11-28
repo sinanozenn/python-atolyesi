@@ -5,7 +5,7 @@ const ders: Ders = {
   sira: 1,
   baslik: "Yazılım, Program ve Kod",
   ozet: "Yazılım nedir, program nasıl yazılır? İlk Python komutun: print().",
-  simge: "👋",
+  simge: "print()",
   sure: "40 dk",
   kitap: "3.1 Programlamada Kullanılan İşlem ve Semboller (giriş) · s. 84–85",
   hedefler: [

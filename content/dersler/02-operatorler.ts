@@ -5,7 +5,7 @@ const ders: Ders = {
   sira: 2,
   baslik: "Operatörler",
   ozet: "Aritmetiksel, karşılaştırma ve mantıksal operatörlerle hesap yap, karşılaştır.",
-  simge: "➗",
+  simge: "+ − × ÷",
   sure: "2 × 40 dk",
   kitap: "3.1.1 Operatörler · s. 85–88",
   hedefler: [

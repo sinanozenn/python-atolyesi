@@ -6,7 +6,7 @@ const ders: Ders = {
   sira: 2,
   baslik: "Akış Şeması",
   ozet: "Algoritmaları şekillerle çizmek: semboller, kurallar ve sıralı, kararlı, döngülü şema örnekleri.",
-  simge: "🔷",
+  simge: "→ ◇",
   sure: "2 × 40 dk",
   kitap: "Hazırlık dersi: Akış şeması",
   hedefler: [

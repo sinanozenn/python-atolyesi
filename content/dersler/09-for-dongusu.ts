@@ -9,7 +9,7 @@ const ders: Ders = {
   sira: 9,
   baslik: "Döngü Yapıları: for",
   ozet: "Tekrar eden işleri bilgisayara yaptır: for döngüsü, range() ve toplam biriktirme.",
-  simge: "🔁",
+  simge: "for",
   sure: "2 × 40 dk",
   kitap: "3.5 Döngü Yapıları · 3.5.1 For Döngüsü · s. 110–111",
   hedefler: [

@@ -5,7 +5,7 @@ const ders: Ders = {
   sira: 1,
   baslik: "Algoritma",
   ozet: "Bir problemi adım adım çözmek: algoritmanın tanımı, özellikleri ve günlük hayattan örnekler.",
-  simge: "🧭",
+  simge: "1 2 3",
   sure: "2 × 40 dk",
   kitap: "Hazırlık dersi: Algoritma",
   hedefler: [

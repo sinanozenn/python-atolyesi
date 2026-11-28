@@ -105,11 +105,10 @@ h1, h2, h3 { line-height: 1.25; }
   border: 2px solid transparent; transition: border-color 0.15s, transform 0.15s;
 }
 .ders-karti:hover { border-color: var(--mavi); transform: translateY(-2px); }
-.ders-karti h3 { margin: 0.2rem 0 0; font-size: 1.15rem; }
+.ders-karti h3 { margin: 0.6rem 0 0; font-size: 1.15rem; }
 .ders-karti p { margin: 0 0 0.5rem; color: var(--soluk); font-size: 0.92rem; flex: 1; }
-.ders-karti-ust { display: flex; justify-content: space-between; align-items: center; }
-.ders-simge { font-size: 1.8rem; }
-.ders-simge.buyuk { font-size: 3rem; }
+.ders-etiketi { --r: var(--mavi); align-self: flex-start; display: inline-grid; place-items: center; min-width: 46px; height: 46px; padding: 0 0.7rem; border-radius: 12px; font-family: var(--kod-font); font-weight: 700; font-size: 0.9rem; white-space: nowrap; color: var(--r); background: color-mix(in srgb, var(--r) 8%, white); border: 1px solid color-mix(in srgb, var(--r) 22%, white); }
+.ders-etiketi.buyuk { min-width: 64px; height: 64px; padding: 0 1rem; border-radius: 16px; font-size: 1.15rem; }
 .ders-no { font-size: 0.8rem; font-weight: 700; color: var(--mavi); text-transform: uppercase; letter-spacing: 0.04em; }
 
 /* ---------- İlerleme ---------- */

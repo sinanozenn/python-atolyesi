@@ -5,7 +5,7 @@ const ders: Ders = {
   sira: 4,
   baslik: "Veri Türleri",
   ozet: "Sayısal ve metinsel veriler, tür uyumu, tür dönüştürme ve kullanıcıdan veri almak.",
-  simge: "🔢",
+  simge: "int str",
   sure: "40 dk",
   kitap: "3.2 Veri Türleri · s. 91–92 (ve s. 94 Bilgi Notu)",
   hedefler: [

@@ -5,7 +5,7 @@ const ders: Ders = {
   sira: 6,
   baslik: "Diziler (Listeler)",
   ozet: "Birden fazla veriyi tek bir isimle sakla; indis numarasıyla elemanlara ulaş.",
-  simge: "🗂️",
+  simge: "[ , ]",
   sure: "40 dk",
   kitap: "3.3 Farklı Veri Türlerinin Programda Kullanımı – Diziler · s. 100–101",
   hedefler: [

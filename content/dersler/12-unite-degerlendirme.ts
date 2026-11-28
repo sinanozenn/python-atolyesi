@@ -5,7 +5,7 @@ const ders: Ders = {
   sira: 12,
   baslik: "Genel Değerlendirme",
   ozet: "Bütün derslerde öğrendiklerini sorularla ve son bir görevle test et.",
-  simge: "🏆",
+  simge: "test()",
   sure: "40 dk",
   kitap: "3. Ünite Ölçme ve Değerlendirme Soruları · s. 118–121",
   hedefler: [

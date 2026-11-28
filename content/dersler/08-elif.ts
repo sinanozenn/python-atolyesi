@@ -6,7 +6,7 @@ const ders: Ders = {
   sira: 8,
   baslik: "Karar Yapıları: elif (Else If)",
   ozet: "İkiden fazla seçenek olduğunda çoklu karar ver; iç içe karar yapıları kur.",
-  simge: "🚦",
+  simge: "elif",
   sure: "2 × 40 dk",
   kitap: "3.4.2 Else If Yapısı · s. 105–109 (1. Etkinlik dâhil)",
   hedefler: [

@@ -5,7 +5,7 @@ const ders: Ders = {
   sira: 11,
   baslik: "Döngü ve Karar Yapılarıyla Programlar",
   ozet: "Döngüleri, karar yapılarını ve dizileri birlikte kullanarak gerçek problemler çöz.",
-  simge: "🧩",
+  simge: "for if",
   sure: "2 × 40 dk",
   kitap: "3.6 Döngü ve Karar Yapıları ile Programlar · s. 113–117 (2. Etkinlik, 5. Uygulama)",
   hedefler: [

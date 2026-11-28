@@ -5,7 +5,7 @@ const ders: Ders = {
   sira: 5,
   baslik: "Farklı Veri Türlerinin Kullanımı",
   ozet: "Tam sayı, ondalıklı sayı, metin, boolean ve karakter verileriyle gerçek hayat problemleri.",
-  simge: "🧮",
+  simge: "\"Aa\"",
   sure: "2 × 40 dk",
   kitap: "3.3 Farklı Veri Türlerinin Programda Kullanımı · s. 93–100",
   hedefler: [
