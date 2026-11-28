@@ -61,7 +61,8 @@ print("C")`,
   {
     tur: "ornek",
     baslik: "Örnek · 🟡 Orta: Blokta birden fazla satır",
-    aciklama: "Kargo ücreti: 300 TL ve üzeri alışverişte kargo bedava, altında 40 TL. Her blokta iki satır var.",
+    aciklama: "Kargo ücreti: 300 TL ve üzeri alışverişte kargo bedava, altında 40 TL. Her blokta iki satır var. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
+    izle: true,
     kod: `tutar = float(input("Sepet tutarı: "))
 if tutar >= 300:
     kargo = 0

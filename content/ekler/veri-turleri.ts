@@ -62,7 +62,8 @@ print("Not: " + str(85))`,
   {
     tur: "ornek",
     baslik: "Örnek · 🟡 Orta: Doğum yılından yaş",
-    aciklama: "input() metin verdiği için hesap yapmadan önce int() ile sayıya çeviriyoruz.",
+    aciklama: "input() metin verdiği için hesap yapmadan önce int() ile sayıya çeviriyoruz. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
+    izle: true,
     kod: `yil = int(input("Doğum yılın: "))
 yas = 2026 - yil
 print("Bu yıl", yas, "yaşına giriyorsun.")

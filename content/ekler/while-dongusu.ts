@@ -41,7 +41,8 @@ while i <= 20:
   {
     tur: "ornek",
     baslik: "Örnek · 🟢 Kolay: Para bitene kadar",
-    aciklama: "Her gün 35 TL harcanıyor. Para yetmeyene kadar döngü devam ediyor.",
+    aciklama: "Her gün 35 TL harcanıyor. Para yetmeyene kadar döngü devam ediyor. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
+    izle: true,
     kod: `para = 200
 gun = 0
 while para >= 35:

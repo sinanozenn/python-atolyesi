@@ -75,7 +75,8 @@ print("Tersi:", not gecti)`,
   {
     tur: "ornek",
     baslik: "Örnek · 🔴 Zor: Baş harfler",
-    aciklama: "Ad ve soyadın ilk harflerini alıp büyük harfe çeviriyoruz.",
+    aciklama: "Ad ve soyadın ilk harflerini alıp büyük harfe çeviriyoruz. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
+    izle: true,
     kod: `ad = input("Adın: ")
 soyad = input("Soyadın: ")
 bas_harfler = ad[0].upper() + "." + soyad[0].upper() + "."

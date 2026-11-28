@@ -5,6 +5,8 @@ import CiktiPaneli from "./CiktiPaneli";
 import { useRouter } from "next/navigation";
 import { pythonCalistir, useMotorDurumu, type CalismaSonucu } from "@/lib/python";
 import { ideyeGonder } from "@/lib/ide-depo";
+import { koduIzle, type IzSonucu } from "@/lib/izleyici";
+import AdimAdim from "./AdimAdim";
 
 type Props = {
   kod: string;
@@ -13,9 +15,11 @@ type Props = {
   enAz?: number;
   /** Değişiklik olunca dışarı bildir (ör. oyun alanında kaydetmek için) */
   degisince?: (kod: string) => void;
+  /** true ise "Adım adım çalıştır" düğmesi gösterilir */
+  izle?: boolean;
 };
 
-export default function KodCalistirici({ kod: ilkKod, girdiler: ilkGirdiler = [], baslik, enAz, degisince }: Props) {
+export default function KodCalistirici({ kod: ilkKod, girdiler: ilkGirdiler = [], baslik, enAz, degisince, izle }: Props) {
   const [kod, setKod] = useState(ilkKod);
   const [girdiMetni, setGirdiMetni] = useState(ilkGirdiler.join("\n"));
   const [sonuc, setSonuc] = useState<CalismaSonucu | null>(null);
@@ -24,8 +28,23 @@ export default function KodCalistirici({ kod: ilkKod, girdiler: ilkGirdiler = []
   const router = useRouter();
   const girdiGerekli = /\binput\s*\(/.test(kod);
 
+  const [iz, setIz] = useState<{ kod: string; sonuc: IzSonucu } | null>(null);
+  const adimAdim = async () => {
+    setCalisiyor(true);
+    const girdiler = girdiMetni === "" ? [] : girdiMetni.split("\n");
+    const sonuc = await koduIzle(kod, girdiler);
+    setCalisiyor(false);
+    if (sonuc.adimlar.length > 0) {
+      setIz({ kod, sonuc });
+      setSonuc(null);
+    } else {
+      setSonuc({ cikti: "", hata: { tur: "Hata", mesaj: sonuc.hata?.mesaj ?? "Kod izlenemedi.", satir: sonuc.hata?.satir ?? null, ayrinti: "" } });
+    }
+  };
+
   const calistir = useCallback(async () => {
     setCalisiyor(true);
+    setIz(null);
     const girdiler = girdiMetni === "" ? [] : girdiMetni.split("\n");
     setSonuc(await pythonCalistir(kod, girdiler, true));
     setCalisiyor(false);
@@ -53,12 +72,18 @@ export default function KodCalistirici({ kod: ilkKod, girdiler: ilkGirdiler = []
         <button className="dugme dugme-ana" onClick={calistir} disabled={calisiyor}>
           {calisiyor ? "Çalışıyor…" : durum === "hazir" ? "▶ Çalıştır" : "▶ Çalıştır (Python yükleniyor)"}
         </button>
+        {izle && (
+          <button className="dugme dugme-izle" onClick={adimAdim} disabled={calisiyor}>
+            👣 Adım adım çalıştır
+          </button>
+        )}
         <button
           className="dugme"
           onClick={() => {
             setKod(ilkKod);
             setGirdiMetni(ilkGirdiler.join("\n"));
             setSonuc(null);
+            setIz(null);
             degisince?.(ilkKod);
           }}
         >
@@ -76,6 +101,7 @@ export default function KodCalistirici({ kod: ilkKod, girdiler: ilkGirdiler = []
         </button>
         <span className="kisayol">Kısayol: Ctrl + Enter</span>
       </div>
+      {iz && <AdimAdim key={iz.kod + iz.sonuc.adimlar.length} kod={iz.kod} iz={iz.sonuc} kapat={() => setIz(null)} />}
       {(sonuc || calisiyor) && <CiktiPaneli cikti={sonuc?.cikti ?? ""} hata={sonuc?.hata ?? null} calisiyor={calisiyor} />}
     </div>
   );

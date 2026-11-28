@@ -84,7 +84,8 @@ print("Ödenecek:", odenecek)`,
   {
     tur: "ornek",
     baslik: "Örnek · 🔴 Zor: İki bardağın içindekini değiştirmek",
-    aciklama: "a ile b'nin değerlerini yer değiştirmek için üçüncü bir 'boş bardak' (gecici) gerekir. Gecici olmadan denersen ne olur?",
+    aciklama: "a ile b'nin değerlerini yer değiştirmek için üçüncü bir 'boş bardak' (gecici) gerekir. Gecici olmadan denersen ne olur? 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
+    izle: true,
     kod: `a = 3
 b = 8
 print("Önce:", a, b)

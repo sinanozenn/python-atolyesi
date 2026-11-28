@@ -195,7 +195,8 @@ Bu algoritmada döngünün **kaç kez döneceği önceden belli değil**; kullan
   {
     tur: "ornek",
     baslik: "Örnek · 🔴 Zor: En büyük sayı (Python)",
-    aciklama: "Algoritmadaki her adımın Python'daki karşılığını bul. Girdiler kutusundaki 5 sayıyı değiştirip dene.",
+    aciklama: "Algoritmadaki her adımın Python'daki karşılığını bul. Girdiler kutusundaki 5 sayıyı değiştirip dene. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
+    izle: true,
     kod: `sayi = int(input("1. sayı: "))
 en_buyuk = sayi
 sayac = 1

@@ -72,7 +72,8 @@ print(kelime, "kelimesinde", sesli, "sesli harf var.")`,
   {
     tur: "ornek",
     baslik: "Örnek · 🟡 Orta: Kullanıcının girdiği sayıların toplamı",
-    aciklama: "Döngü kaç kez döneceğini kullanıcıdan öğreniyor. Her turda bir sayı alınıp toplama ekleniyor.",
+    aciklama: "Döngü kaç kez döneceğini kullanıcıdan öğreniyor. Her turda bir sayı alınıp toplama ekleniyor. 👣 Adım adım çalıştır düğmesiyle her satırda neler olduğunu izle.",
+    izle: true,
     kod: `adet = int(input("Kaç sayı gireceksin? "))
 toplam = 0
 for i in range(adet):
