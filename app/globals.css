@@ -338,13 +338,15 @@ h1, h2, h3 { line-height: 1.25; }
 .siralama-etiket { font-size: 0.85rem; font-weight: 800; color: #d9475f; }
 .siralama h3 { margin: 0.1rem 0 0.2rem; font-size: 1.2rem; }
 .siralama > .md p { margin: 0.3rem 0 0.8rem; }
+.siralama-ipucu { margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--soluk); }
 .siralama-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
-.siralama-adim { display: grid; grid-template-columns: 2rem minmax(0, 1fr) auto; align-items: center; gap: 0.6rem; padding: 0.4rem 0.5rem 0.4rem 0.75rem; border: 1px solid var(--cizgi); border-radius: 6px; background: var(--kart); }
-.siralama-no { font-family: var(--kod-font); color: var(--soluk); font-size: 0.9rem; }
-.siralama-dugmeler { display: flex; gap: 0.25rem; }
-.siralama-tasi { font: inherit; width: 2.1rem; height: 2.1rem; border: 1px solid #c4d6d3; border-radius: 6px; background: var(--kart); color: var(--vurgu-koyu); cursor: pointer; }
-.siralama-tasi:hover:not(:disabled) { background: var(--vurgu-acik); border-color: var(--vurgu); }
-.siralama-tasi:disabled { opacity: 0.35; cursor: default; }
+.siralama-adim { display: grid; grid-template-columns: 1.4rem 1.6rem minmax(0, 1fr); align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem 0.6rem 0.55rem; border: 1px solid var(--cizgi); border-radius: 10px; background: var(--kart); cursor: grab; user-select: none; transition: box-shadow 0.15s, border-color 0.15s, background 0.15s; }
+.siralama-adim:hover { border-color: #b9cbe3; }
+.siralama-adim:focus-visible { outline: 2px solid var(--mavi); outline-offset: 2px; }
+.siralama-adim.suruklenen { cursor: grabbing; border-color: var(--mavi); background: var(--mavi-acik); box-shadow: 0 8px 20px rgba(20, 40, 80, 0.15); position: relative; z-index: 2; }
+.siralama-tutamak { display: grid; place-items: center; height: 100%; color: #a3adbd; touch-action: none; cursor: grab; }
+.siralama-tutamak svg { fill: currentColor; }
+.siralama-adim:hover .siralama-tutamak, .siralama-adim.suruklenen .siralama-tutamak { color: var(--mavi); }
 .siralama-adim.dogru { border-color: #9fd3b4; background: var(--yesil-acik); }
 .siralama-adim.yanlis { border-color: #ecc5c8; background: var(--kirmizi-acik); }
 

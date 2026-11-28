@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Markdown from "./Markdown";
 
 // Adımları doğru sıraya dizme etkinliği. Karıştırma, sunucu ve tarayıcıda aynı sonucu vermesi için
@@ -24,13 +24,63 @@ export default function Siralama({ baslik, gorev, adimlar }: { baslik: string; g
   const dogruSayisi = sira.filter((v, i) => v === i).length;
   const tamam = dogruSayisi === adimlar.length;
 
-  const tasi = (i: number, yon: -1 | 1) => {
-    const j = i + yon;
-    if (j < 0 || j >= sira.length) return;
-    const yeni = [...sira];
-    [yeni[i], yeni[j]] = [yeni[j], yeni[i]];
-    setSira(yeni);
+  const liste = useRef<HTMLOListElement>(null);
+  const [suruklenen, setSuruklenen] = useState<number | null>(null);
+
+  const yerlestir = (adim: number, hedef: number) => {
+    setSira((onceki) => {
+      const yeni = onceki.filter((a) => a !== adim);
+      yeni.splice(hedef, 0, adim);
+      return yeni.every((a, i) => a === onceki[i]) ? onceki : yeni;
+    });
     setKontrol(false);
+  };
+
+  // Sürüklenen adımı, işaretçinin altındaki boşluğa taşır (diğer adımların orta noktalarına göre).
+  const hedefBul = (y: number, adim: number) => {
+    const ogeler = Array.from(liste.current?.children ?? []) as HTMLElement[];
+    let hedef = 0;
+    for (const o of ogeler) {
+      if (Number(o.dataset.adim) === adim) continue;
+      const r = o.getBoundingClientRect();
+      if (r.top + r.height / 2 < y) hedef++;
+    }
+    return hedef;
+  };
+
+  const basla = (e: React.PointerEvent<HTMLLIElement>, adim: number) => {
+    const tutamak = (e.target as HTMLElement).closest(".siralama-tutamak");
+    if (e.pointerType !== "mouse" && !tutamak) return; // dokunmatikte sayfa kaydırılabilsin
+    if (e.button !== 0) return;
+    e.preventDefault();
+    setSuruklenen(adim);
+  };
+
+  // Sürükleme sırasında öğeler yer değiştirdiği için olayları pencereden dinliyoruz.
+  useEffect(() => {
+    if (suruklenen === null) return;
+    const hareket = (e: PointerEvent) => {
+      e.preventDefault();
+      yerlestir(suruklenen, hedefBul(e.clientY, suruklenen));
+    };
+    const bitir = () => setSuruklenen(null);
+    window.addEventListener("pointermove", hareket, { passive: false });
+    window.addEventListener("pointerup", bitir);
+    window.addEventListener("pointercancel", bitir);
+    return () => {
+      window.removeEventListener("pointermove", hareket);
+      window.removeEventListener("pointerup", bitir);
+      window.removeEventListener("pointercancel", bitir);
+    };
+  }, [suruklenen]);
+
+  const klavye = (e: React.KeyboardEvent<HTMLLIElement>, i: number, adim: number) => {
+    if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
+    e.preventDefault();
+    const j = e.key === "ArrowUp" ? i - 1 : i + 1;
+    if (j < 0 || j >= sira.length) return;
+    yerlestir(adim, j);
+    requestAnimationFrame(() => (liste.current?.children[j] as HTMLElement | undefined)?.focus());
   };
 
   return (
@@ -38,21 +88,25 @@ export default function Siralama({ baslik, gorev, adimlar }: { baslik: string; g
       <div className="siralama-etiket">Sırala</div>
       <h3>{baslik}</h3>
       <Markdown>{gorev}</Markdown>
-      <ol className="siralama-liste">
+      <p className="siralama-ipucu">Adımları tutup sürükleyerek doğru sıraya diz.</p>
+      <ol className="siralama-liste" ref={liste}>
         {sira.map((adim, i) => {
           const durum = kontrol ? (adim === i ? " dogru" : " yanlis") : "";
           return (
-            <li key={adim} className={`siralama-adim${durum}`}>
+            <li
+              key={adim}
+              data-adim={adim}
+              tabIndex={0}
+              className={`siralama-adim${durum}${suruklenen === adim ? " suruklenen" : ""}`}
+              onPointerDown={(e) => basla(e, adim)}
+              onKeyDown={(e) => klavye(e, i, adim)}
+              aria-label={`${i + 1}. sırada: ${adimlar[adim]}. Yerini değiştirmek için sürükle ya da yukarı/aşağı ok tuşlarını kullan.`}
+            >
+              <span className="siralama-tutamak" aria-hidden="true">
+                <svg viewBox="0 0 10 16" width="10" height="16"><circle cx="2.5" cy="3" r="1.4" /><circle cx="7.5" cy="3" r="1.4" /><circle cx="2.5" cy="8" r="1.4" /><circle cx="7.5" cy="8" r="1.4" /><circle cx="2.5" cy="13" r="1.4" /><circle cx="7.5" cy="13" r="1.4" /></svg>
+              </span>
               <span className="siralama-no">{i + 1}</span>
               <span className="siralama-metin">{adimlar[adim]}</span>
-              <span className="siralama-dugmeler">
-                <button className="siralama-tasi" onClick={() => tasi(i, -1)} disabled={i === 0} aria-label={`"${adimlar[adim]}" adımını yukarı taşı`}>
-                  ↑
-                </button>
-                <button className="siralama-tasi" onClick={() => tasi(i, 1)} disabled={i === sira.length - 1} aria-label={`"${adimlar[adim]}" adımını aşağı taşı`}>
-                  ↓
-                </button>
-              </span>
             </li>
           );
         })}

@@ -63,7 +63,7 @@ Bu adımların sırasını değiştirirsek ne olur? Örneğin 6. adımı 5. adı
     {
       tur: "siralama",
       baslik: "Okula hazırlanma algoritması",
-      gorev: "Sabah okula hazırlanma adımları karıştı. Okları kullanarak adımları **doğru sıraya** diz.",
+      gorev: "Sabah okula hazırlanma adımları karıştı. Adımları sürükleyerek **doğru sıraya** diz.",
       adimlar: ["Başla", "Alarm çalınca uyan", "Yüzünü yıka", "Okul kıyafetlerini giy", "Kahvaltı yap", "Çantanı al", "Evden çık", "Bitir"],
     },
     {
