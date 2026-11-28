@@ -7,6 +7,7 @@ import { dersler, alistirmalar } from "../content";
 import { ciktiyiDuzenle } from "../lib/kontrol";
 import path from "node:path";
 import { akisOrnekleri } from "../content/akis-ornekleri";
+import { ideOrnekleri } from "../content/ide-ornekleri";
 import { semaGraf, sema } from "../content/sema";
 import { semayiDenetle, semayiDerle, iziAyir } from "../lib/akis-derleyici";
 
@@ -41,6 +42,11 @@ for (const d of dersler) {
   }
 }
 // Akış şeması örnekleri: çizilebiliyor, denetimden geçiyor, Python'a çevrilip doğru çalışıyor mu?
+for (const o of ideOrnekleri) {
+  if (!o.deneme) continue;
+  const r = calistir(o.kod.replace("time.sleep(1)", "pass"), o.deneme, true);
+  if (r.hata) { hata++; console.log(`❌ [IDE ${o.dosya}]`, r.hata); }
+}
 for (const o of akisOrnekleri) {
   sema(o.ad, o.parcalar);
   const g = semaGraf(o.parcalar);
@@ -54,5 +60,5 @@ for (const o of akisOrnekleri) {
   }
 }
 
-console.log(hata ? `\n${hata} sorun bulundu.` : `\n✅ ${dersler.length} ders, ${ids.size} alıştırma: ${akisOrnekleri.length} akış şeması: tüm çözümler ve örnekler doğru çalışıyor.`);
+console.log(hata ? `\n${hata} sorun bulundu.` : `\n✅ ${dersler.length} ders, ${ids.size} alıştırma: ${akisOrnekleri.length} akış şeması, ${ideOrnekleri.length} IDE örneği: tüm çözümler ve örnekler doğru çalışıyor.`);
 process.exit(hata ? 1 : 0);
